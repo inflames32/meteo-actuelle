@@ -1,17 +1,15 @@
-// == Import npm
 import React from 'react';
+import 'semantic-ui-css/semantic.min.css';
+import SearchBar from '../../containers/searchBar';
 
-// == Import
-import Counter from 'src/containers/Counter';
-import reactLogo from './react-logo.svg';
-import './styles.css';
+
+import './styles.scss';
 
 // == Composant
 const App = () => (
   <div className="app">
-    <img src={reactLogo} alt="react logo" />
-    <h1>Composant : App</h1>
-    <Counter />
+    <h1>What weather today ?</h1>
+    <SearchBar />
   </div>
 );
 

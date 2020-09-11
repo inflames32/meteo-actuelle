@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Counter from 'src/components/Counter';
 
 // Action Creators
-import { increment, decrement } from '../actions';
+import { increment, decrement } from '../store/actions';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
