@@ -1,7 +1,6 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import SearchBar from '../../containers/searchBar';
-
+import SearchBar from '../../containers/SearchBar';
 
 import './styles.scss';
 

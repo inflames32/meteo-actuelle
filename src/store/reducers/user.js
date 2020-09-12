@@ -1,8 +1,9 @@
-import { INPUT_CITY } from '../actions';
+import { INPUT_CITY_CHANGE, SUBMIT_BUTTON } from '../actions';
 
 const initialState = {
   loading: false,
   city: '',
+  cityZipCode: '',
   temp: '',
   unity: '°C',
   weather: '',
@@ -10,11 +11,18 @@ const initialState = {
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
-    case INPUT_CITY:
+    case INPUT_CITY_CHANGE:
       return {
         ...state,
-        ...action.payload,
+        city: action.payload,
       };
+
+    case SUBMIT_BUTTON:
+      return {
+        ...state,
+        loading: true,
+      };
+
     default:
       return state;
   }
