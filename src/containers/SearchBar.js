@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import SearchBar from '../components/SearchBar';
 
-import { inputCityChange, submitError, submitButton, submitSuccess } from '../store/actions';
+import { inputCityChange, submitError, submit, submitSuccess } from '../store/actions';
 
 const mapState = (state) => ({
   city: state.user.city,
-  cityZipCode: state.user.city,
+  cityZipCode: state.user.cityZipCode,
   temp: state.user.temp,
   unity: state.user.unity,
   weather: state.user.weather,
@@ -17,9 +17,9 @@ const mapDispatch = (dispatch) => ({
     console.log(changeInput);
     dispatch(inputCityChange(changeInput));
   },
-  submitButton: () => {
+  submitCitySearch: () => {
     console.log();
-    dispatch(submitSuccess);
+    dispatch(submit());
   },
 
 

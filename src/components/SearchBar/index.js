@@ -9,6 +9,8 @@ const SearchBar = ({
   city,
   submitCitySearch,
   onInputChange,
+  messageError,
+  messageSuccess,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -19,20 +21,19 @@ const SearchBar = ({
   return (
     <div className="container">
       <form
-        action="POST"
+        action="GET"
         onSubmit={handleSubmit}
       >
+        {messageError && (
+          <div>message: {messageError}</div>
+        )}
+        {messageSuccess && (
+          <div>message: {messageSuccess}</div>
+        )}
 
-        {/* {loading && (
-          <Input
-            type="text"
-            value=""
-            name="search-bar"
-            className="search-bar"
-            onChange={handleInputChange}
-            icon="search"
-          />
-        )} */}
+        {loading && (
+          <div>...loading</div>
+        )}
 
         <Input
           className="search-bar"

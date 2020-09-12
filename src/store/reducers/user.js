@@ -1,4 +1,9 @@
-import { INPUT_CITY_CHANGE, SUBMIT_BUTTON } from '../actions';
+import {
+  INPUT_CITY_CHANGE,
+  SUBMIT,
+  SUBMIT_SUCCESS,
+  SUBMIT_ERROR,
+} from '../actions';
 
 const initialState = {
   loading: false,
@@ -7,6 +12,8 @@ const initialState = {
   temp: '',
   unity: '°C',
   weather: '',
+  messageSuccess: '',
+  messageError: '',
 };
 
 export default (state = initialState, action = {}) => {
@@ -17,10 +24,23 @@ export default (state = initialState, action = {}) => {
         city: action.payload,
       };
 
-    case SUBMIT_BUTTON:
+    case SUBMIT:
       return {
         ...state,
         loading: true,
+      };
+    case SUBMIT_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        messageSuccess: 'bravo!',
+      };
+
+    case SUBMIT_ERROR:
+      return {
+        ...state,
+        loading: false,
+        messageError: 'unknow city',
       };
 
     default:
