@@ -31,10 +31,6 @@ const SearchBar = ({
           <div>message: {messageSuccess}</div>
         )}
 
-        {loading && (
-          <div>...loading</div>
-        )}
-
         <Input
           className="search-bar"
           type="text"
@@ -45,12 +41,19 @@ const SearchBar = ({
           icon="search"
 
         />
-        <Button
-          primary
-          className="container-button"
-          type="submit"
-        >OK
-        </Button>
+        {loading && (
+          <Button basic loading>
+            Loading
+          </Button>
+        )}
+
+        {!loading && (
+          <Button
+            className="container-button"
+            type="submit"
+          >OK
+          </Button>
+        )}
       </form>
     </div>
   );

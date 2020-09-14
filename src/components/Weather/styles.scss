@@ -1,0 +1,12 @@
+.container-weather {
+  width: 80vw;
+  min-height: 20%;
+  max-height: 100vh;
+
+  &-title {
+    color: blue;
+  }
+  &-CityName {
+    color: red;
+  }
+}

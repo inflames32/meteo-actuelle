@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
 import SearchBar from '../components/SearchBar';
 
-import { inputCityChange, submitError, submit, submitSuccess } from '../store/actions';
+import { inputCityChange, submit } from '../store/actions';
 
 const mapState = (state) => ({
   city: state.user.city,
   cityZipCode: state.user.cityZipCode,
-  temp: state.user.temp,
-  unity: state.user.unity,
-  weather: state.user.weather,
+  units: state.user.units,
+  data: state.user.data,
   loading: state.user.loading,
 });
 

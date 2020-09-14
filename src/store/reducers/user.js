@@ -9,11 +9,12 @@ const initialState = {
   loading: false,
   city: '',
   cityZipCode: '',
-  temp: '',
-  unity: '°C',
-  weather: '',
+  units: 'metric',
+  API: {},
   messageSuccess: '',
   messageError: '',
+  lang: 'fr',
+  apiSuccess: false,
 };
 
 export default (state = initialState, action = {}) => {
@@ -33,7 +34,9 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         loading: false,
-        messageSuccess: 'bravo!',
+        messageSuccess: 'congratulations!',
+        API: { ...action.payload },
+        apiSuccess: true,
       };
 
     case SUBMIT_ERROR:
@@ -41,6 +44,8 @@ export default (state = initialState, action = {}) => {
         ...state,
         loading: false,
         messageError: 'unknow city',
+        apiSuccess: false,
+        API: {},
       };
 
     default:

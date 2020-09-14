@@ -14,8 +14,9 @@ export const submit = () => ({
   type: SUBMIT,
 });
 
-export const submitSuccess = () => ({
+export const submitSuccess = (payload) => ({
   type: SUBMIT_SUCCESS,
+  payload,
 });
 
 export const submitError = () => ({
