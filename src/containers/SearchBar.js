@@ -20,8 +20,6 @@ const mapDispatch = (dispatch) => ({
     console.log();
     dispatch(submit());
   },
-
-
 });
 
 export default connect(mapState, mapDispatch)(SearchBar);

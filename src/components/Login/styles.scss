@@ -1,0 +1,17 @@
+.container-form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// .form-email {
+//   width: 30vw;
+// }
+// .form-password {
+//   width: 30vw;
+// }
+.form-button-disabled {
+  cursor: not-allowed !important;
+}

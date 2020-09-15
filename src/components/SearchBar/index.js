@@ -43,7 +43,7 @@ const SearchBar = ({
         />
         {loading && (
           <Button basic loading>
-            Loading
+            Loading...
           </Button>
         )}
 
