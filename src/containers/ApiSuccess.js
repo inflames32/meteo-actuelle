@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import ApiSuccess from '../components/Weather/ApiSuccess';
 
+import { selectUnit } from '../store/actions';
+
 const mapState = (state) => ({
   city: state.user.city,
   cityZipCode: state.user.cityZipCode,
@@ -10,6 +12,10 @@ const mapState = (state) => ({
   apiSuccess: state.user.apiSuccess,
 });
 
-const mapDispatch = null;
+const mapDispatch = (dispatch) => ({
+  selectUnit: (units) => {
+    dispatch(selectUnit(units));
+  },
+});
 
 export default connect(mapState, mapDispatch)(ApiSuccess);

@@ -1,11 +1,17 @@
 .app {
+  border-radius: 0.5em;
+  padding-bottom: 2rem;
   width: 80vw;
-  height: 100vh;
+  height: auto;
   margin: 1em auto;
   text-align: center;
-  background-color: rgb(160, 159, 159);
+  background-color: #2d3748;
 }
 
 .app img {
   max-width: 100%;
+}
+
+h1 {
+  padding-top: 2rem;
 }

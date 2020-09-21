@@ -18,8 +18,9 @@ const SearchBar = ({
   };
 
   return (
-    <div className="container">
+    <div className="container_searchbar">
       <form
+        className="form-input"
         action="GET"
         onSubmit={handleSubmit}
       >
@@ -41,9 +42,7 @@ const SearchBar = ({
 
         />
         {loading && (
-          <Button basic loading>
-            Loading...
-          </Button>
+          <Button basic loading />
         )}
 
         {!loading && (

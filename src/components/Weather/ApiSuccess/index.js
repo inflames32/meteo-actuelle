@@ -1,23 +1,37 @@
 import React from 'react';
+import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
+import { Button } from 'semantic-ui-react';
 
-const ApiSuccess = ({ API, weatherAPI, units }) => {
+import './ApiSuccess.scss';
+
+const ApiSuccess = ({ API, units, selectUnit }) => {
   console.log('api----', API);
   const temp = API.main.temp.toFixed(1);
-  const temp_feel = API.main.feels_like.toFixed(1);
+  const tempFeel = API.main.feels_like.toFixed(1);
   const windInKmByHour = Math.trunc(API.wind.speed * 3.6);
-  const weatherCode = API.weather.[0].id;
+  // const weatherIcon = `http://openweathermap.org/img/wn/04d@2x.png`;
   const weatherIcon = `http://openweathermap.org/img/wn/${API.weather.[0].icon}@2x.png`;
+  const metricUnit = '°C';
+  const imperialInit = '°F';
 
   return (
     <div>
-      <div className="container-cityName">{API.name} {API.sys.country}</div>
+      <div>
+        <Button type="button" primary onClick={(evt) => selectUnit(evt.target.value)} value="metric">metric</Button>
+        <Button type="button" secondary onClick={(evt) => selectUnit(evt.target.value)} value="imperial">Imperial</Button>
+        <div className="container-city_name">{API.name} {API.sys.country}
+          <span>
+            <AiOutlineStar />
+          </span>
+        </div>
+      </div>
       <img src={weatherIcon} alt="icon_weather" />
-      <div className="container-cityName">Température: {temp} °C</div>
-      <div className="container-cityName">Température ressentie: {temp_feel} °C</div>
-      <div className="container-cityClouds">Couverture nuageuse: {API.weather.[0].description}, {API.clouds.all} %</div>
-      <div className="container-cityClouds">Humidité: {API.main.humidity} %</div>
-      <div className="container-cityWind">Vent: {windInKmByHour} Km/h</div>
-      <div className="container-cityVisibility">Visibilité: {API.visibility} m</div>
+      <div className="container-temp">Température: {temp} °C</div>
+      <div className="container-temp_feel">Température ressentie: {tempFeel} {units}</div>
+      <div className="container-city_cloud">Couverture nuageuse: {API.weather.[0].description}, {API.clouds.all} %</div>
+      <div className="container-city_humidity">Humidité: {API.main.humidity} %</div>
+      <div className="container-city_wind">Vent: {windInKmByHour} Km/h</div>
+      <div className="container-city_visibility">Visibilité: {API.visibility} m</div>
     </div>
   );
 };

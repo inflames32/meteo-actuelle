@@ -35,13 +35,15 @@ const logMiddleware = (store) => (next) => (action) => {
     }
 
     case SUBMIT: {
-      const apiKey = '183deee9a13cf0287c807a50c35417d1';
+      const API_KEY = process.env.API_KEY;
+      console.log(API_KEY);
+      // const API_KEY = '183deee9a13cf0287c807a50c35417d1';
       const cityName = store.getState().user.city;
       const unity = store.getState().user.units;
       const language = store.getState().user.lang;
       axios({
         method: 'get',
-        url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${unity}&appid=${apiKey}&lang=${language}`,
+        url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${unity}&appid=${API_KEY}&lang=${language}`,
       }).then((res) => {
         console.log(res);
         console.log('data ----', res.data);

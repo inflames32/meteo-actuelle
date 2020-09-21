@@ -2,12 +2,21 @@ export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 export const INPUT_CITY_CHANGE = 'INPUT_CITY_CHANGE';
 export const SUBMIT = 'SUBMIT';
+
+// = Login
 export const ON_INPUT_CHANGE = 'ON_INPUT_CHANGE';
 export const SUBMIT_SUCCESS = 'SUBMIT_SUCCESS';
 export const SUBMIT_ERROR = 'SUBMIT_ERROR';
 export const ON_FORM_LOGIN = 'ON_FORM_LOGIN';
 export const ON_FORM_LOGIN_ERROR = 'ON_FORM_LOGIN_ERROR';
 export const ON_FORM_LOGIN_SUCCESS = 'ON_FORM_LOGIN_SUCCESS';
+
+export const SELECT_UNIT = 'SELECT_UNIT';
+
+export const selectUnit = (payload) => ({
+  type: SELECT_UNIT,
+  payload,
+});
 
 export const inputCityChange = (payload) => ({
   type: INPUT_CITY_CHANGE,

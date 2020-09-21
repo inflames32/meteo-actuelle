@@ -1,0 +1,15 @@
+.homepage-container {
+  width: 80vw;
+  margin: auto;
+  min-height: auto;
+  max-height: 100vh;
+  background-color: #2d3748;
+  text-align: center;
+  justify-content: center;
+}
+
+.homepage-title {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+}

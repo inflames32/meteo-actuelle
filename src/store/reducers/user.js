@@ -3,10 +3,10 @@ import {
   SUBMIT,
   SUBMIT_SUCCESS,
   SUBMIT_ERROR,
-  ON_FORM_LOGIN,
   ON_FORM_LOGIN_ERROR,
   ON_FORM_LOGIN_SUCCESS,
   ON_INPUT_CHANGE,
+  SELECT_UNIT,
 } from '../actions';
 
 const initialState = {
@@ -31,6 +31,12 @@ const initialState = {
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
+    case SELECT_UNIT:
+      return {
+        ...state,
+        units: action.payload,
+      };
+
     case INPUT_CITY_CHANGE:
       return {
         ...state,
@@ -42,6 +48,7 @@ export default (state = initialState, action = {}) => {
         ...state,
         loading: true,
       };
+
     case SUBMIT_SUCCESS:
       return {
         ...state,
@@ -70,12 +77,7 @@ export default (state = initialState, action = {}) => {
         },
         isLogged: false,
       };
-    // case ON_FORM_LOGIN:
-    //   return {
-    //     ...state,
-    //     loadingLoginSubmit: true,
-    //     isLogged: false,
-    //   };
+
     case ON_FORM_LOGIN_ERROR:
       return {
         ...state,

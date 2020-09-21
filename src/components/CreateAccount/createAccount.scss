@@ -1,0 +1,14 @@
+.container-create-account {
+  width: 80vw;
+  margin: auto;
+  min-height: auto;
+  max-height: 100vh;
+  background-color: #2d3748;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
+  &-contact {
+    display: flex;
+  }
+}
