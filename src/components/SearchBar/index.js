@@ -14,7 +14,6 @@ const SearchBar = ({
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log('ok!');
     submitCitySearch();
   };
 

@@ -22,11 +22,11 @@ const initialState = {
   messageError: '',
   lang: 'fr',
   apiSuccess: false,
-  idUser: '',
   loginData: {
     email: '',
     password: '',
   },
+  weatherAPI: '',
 };
 
 export default (state = initialState, action = {}) => {
@@ -47,6 +47,7 @@ export default (state = initialState, action = {}) => {
         ...state,
         loading: false,
         messageSuccess: 'congratulations!',
+        // API = res.data
         API: { ...action.payload },
         apiSuccess: true,
       };

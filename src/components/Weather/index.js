@@ -1,11 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ApiSuccess from '../../containers/ApiSuccess';
 import './styles.scss';
 
-const Weather = ({ data, API, apiSuccess }) => {
-  // console.log(temperature);
-  // state
-  console.log(data);
+const Weather = ({ API, apiSuccess }) => {
   // state.API
   console.log(API);
   // renvoi api
@@ -15,23 +13,18 @@ const Weather = ({ data, API, apiSuccess }) => {
 
     <div className="container-weather">
       <div className="container-title">
-        {/* {
-            temperature.map((element) => (
-              <div className="container-cityName">{element.temp}</div>
-            ))
-          } */}
         <h3>date</h3>
         {apiSuccess && (
           <ApiSuccess />
         )}
       </div>
-      <div className="body">
-        <div className="body-temp">temp</div>
-        {/* faire une boucle  */}
-        <div className="body-temp">TEMP</div>
-      </div>
     </div>
   );
+};
+
+Weather.propTypes = {
+  apiSuccess: PropTypes.bool.isRequired,
+  API: PropTypes.object.isRequired,
 };
 
 export default Weather;

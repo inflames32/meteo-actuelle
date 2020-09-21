@@ -9,6 +9,7 @@ const Login = ({
   onInputChange,
   loginData,
   loadingLoginSubmit,
+  isLogged,
 }) => {
   const formInputChange = (evt) => {
     const { name, value } = evt.target;
@@ -24,32 +25,44 @@ const Login = ({
 
   return (
     <div className="container-login">
+
       <form
         className="container-form"
         action="POST"
         onSubmit={handleSubmit}
       >
-        <Input
-          type="email"
-          name="email"
-          value={loginData.email}
-          className="form-email"
-          onChange={formInputChange}
-        />
-        <Input
-          type="password"
-          name="password"
-          value={loginData.password}
-          className="form-password"
-          onChange={formInputChange}
-        />
-        {!loadingLoginSubmit && (
-          <Button
-            type="submit"
-            className="form-button"
-          >ok
-          </Button>
+        {isLogged && (
+          <div className="isLogged">
+            <div>
+              Welcome {loginData.email}
+            </div>
+            <Button>Logout </Button>
+          </div>
         )}
+        {!isLogged && (
+          <div>
+            <Input
+              type="email"
+              name="email"
+              value={loginData.email}
+              className="form-email"
+              onChange={formInputChange}
+            />
+            <Input
+              type="password"
+              name="password"
+              value={loginData.password}
+              className="form-password"
+              onChange={formInputChange}
+            />
+            <Button
+              type="submit"
+              className="form-button"
+            >ok
+            </Button>
+          </div>
+        )}
+
         {loadingLoginSubmit && (
           <Button
             type="submit"
@@ -59,6 +72,7 @@ const Login = ({
           />
         )}
       </form>
+      <span>welcome </span>
     </div>
 
   );
@@ -71,6 +85,7 @@ Login.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   loadingLoginSubmit: PropTypes.bool.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 export default Login;

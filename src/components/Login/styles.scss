@@ -6,12 +6,11 @@
   margin-right: auto;
 }
 
-// .form-email {
-//   width: 30vw;
-// }
-// .form-password {
-//   width: 30vw;
-// }
 .form-button-disabled {
   cursor: not-allowed !important;
+}
+
+.isLogged {
+  height: 200px;
+  background-color: red;
 }

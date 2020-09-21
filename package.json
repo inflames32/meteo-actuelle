@@ -59,6 +59,7 @@
     "prop-types": "^15.7.2",
     "react": "*",
     "react-dom": "*",
+    "react-proptypes-generate": "^1.6.1",
     "react-redux": "*",
     "redux": "*",
     "semantic-react": "^0.12.0",

@@ -34,8 +34,9 @@ export const submitError = () => ({
 export const onFormLogin = () => ({
   type: ON_FORM_LOGIN,
 });
-export const onFormLoginSuccess = () => ({
+export const onFormLoginSuccess = (payload) => ({
   type: ON_FORM_LOGIN_SUCCESS,
+  payload,
 });
 export const onFormLoginError = () => ({
   type: ON_FORM_LOGIN_ERROR,
