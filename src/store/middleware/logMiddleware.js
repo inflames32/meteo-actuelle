@@ -1,3 +1,4 @@
+import React from 'react';
 import axios from 'axios';
 
 import {
@@ -35,8 +36,8 @@ const logMiddleware = (store) => (next) => (action) => {
     }
 
     case SUBMIT: {
-      const API_KEY = process.env.API_KEY;
-      console.log(API_KEY);
+      const API_KEY = process.env.REACT_APP_API_KEY;
+      // console.log(API_KEY);
       // const API_KEY = '183deee9a13cf0287c807a50c35417d1';
       const cityName = store.getState().user.city;
       const unity = store.getState().user.units;

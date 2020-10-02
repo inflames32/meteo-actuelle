@@ -1,0 +1,14 @@
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  margin: auto;
+  height: 10vh;
+  line-height: 10vh;
+  align-items: center;
+  &-title{
+    margin: auto;
+  }
+}
+
+

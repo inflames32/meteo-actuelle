@@ -15,8 +15,10 @@ import './styles.scss';
 
 // == Composant
 const App = () => (
+
   <Provider store={store}>
     <Switch>
+
       <Route exact path="/" component={Homepage} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/create-account" component={CreateAccount} />

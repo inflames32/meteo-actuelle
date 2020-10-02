@@ -15,7 +15,7 @@ const ApiSuccess = ({ API, units, selectUnit }) => {
   const imperialInit = '°F';
 
   return (
-    <div>
+    <div className="apiSuccess-container">
       <div>
         <Button type="button" primary onClick={(evt) => selectUnit(evt.target.value)} value="metric">metric</Button>
         <Button type="button" secondary onClick={(evt) => selectUnit(evt.target.value)} value="imperial">Imperial</Button>
