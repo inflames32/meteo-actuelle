@@ -39,6 +39,7 @@ const SearchBar = ({
             onInputChange(evt.target.value);
           }}
           icon="search"
+          focus
 
         />
         {loading && (

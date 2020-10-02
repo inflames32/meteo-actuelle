@@ -1,14 +1,13 @@
 .footer-container {
+  background-color: #122229;
   display: flex;
   flex-direction: row;
   width: 60vw;
   margin: auto;
   height: 10vh;
-  line-height: 10vh;
+  line-height: 5vh;
   align-items: center;
-  &-title{
+  &-title {
     margin: auto;
   }
 }
-
-

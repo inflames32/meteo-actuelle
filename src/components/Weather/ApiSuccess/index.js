@@ -1,10 +1,10 @@
 import React from 'react';
-import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 import { Button } from 'semantic-ui-react';
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
 import './ApiSuccess.scss';
 
-const ApiSuccess = ({ API, units, selectUnit }) => {
+const ApiSuccess = ({ API, units, selectUnit, followed, addFollowed, removeFollowed }) => {
   console.log('api----', API);
   const temp = API.main.temp.toFixed(1);
   const tempFeel = API.main.feels_like.toFixed(1);
@@ -16,13 +16,10 @@ const ApiSuccess = ({ API, units, selectUnit }) => {
 
   return (
     <div className="apiSuccess-container">
-      <div>
-        <Button type="button" primary onClick={(evt) => selectUnit(evt.target.value)} value="metric">metric</Button>
-        <Button type="button" secondary onClick={(evt) => selectUnit(evt.target.value)} value="imperial">Imperial</Button>
+      <div className="apiSuccess-container-button">
+        <Button type="button" primary onClick={(evt) => selectUnit(evt.target.value)} value="metric">°C</Button>
+        <Button type="button" secondary onClick={(evt) => selectUnit(evt.target.value)} value="imperial">°F</Button>
         <div className="container-city_name">{API.name} {API.sys.country}
-          <span>
-            <AiOutlineStar />
-          </span>
         </div>
       </div>
       <img src={weatherIcon} alt="icon_weather" />
@@ -32,6 +29,10 @@ const ApiSuccess = ({ API, units, selectUnit }) => {
       <div className="container-city_humidity">Humidité: {API.main.humidity} %</div>
       <div className="container-city_wind">Vent: {windInKmByHour} Km/h</div>
       <div className="container-city_visibility">Visibilité: {API.visibility} m</div>
+      {!followed &&
+        (<div className="container-heart" onClick={addFollowed}><AiOutlineHeart /></div>)}
+      {followed &&
+        (<div className="container-heart" onClick={removeFollowed}><AiFillHeart /></div>)}
     </div>
   );
 };

@@ -13,6 +13,44 @@ export const ON_FORM_LOGIN_SUCCESS = 'ON_FORM_LOGIN_SUCCESS';
 
 export const SELECT_UNIT = 'SELECT_UNIT';
 
+//= followed
+export const ADDFOLLOWED = 'ADDFOLLOWED';
+export const REMOVEFOLLOWED = 'REMOVEFOLLOWED';
+
+//=createAccount
+export const ONCREATEACCOUNTINPUTCHANGE = 'ONCREATEACCOUNTINPUTCHANGE';
+export const SUBMITCREATEACCOUNTFORM = 'SUBMITCREATEACCOUNTFORM';
+export const SUBMITCREATEACCOUNTFORMSUCCESS = 'SUBMITCREATEACCOUNTFORMSUCCESS';
+export const SUBMITCREATEACCOUNTFORMERROR = 'SUBMITCREATEACCOUNTFORMERROR';
+
+export const onCreateAccountInputChange = (payload) => ({
+  type: ONCREATEACCOUNTINPUTCHANGE,
+  payload,
+})
+export const submitCreateAccountForm = () => ({
+  type: SUBMITCREATEACCOUNTFORM,
+});
+
+export const submitCreateAccountFormSuccess = (payload) => ({
+  type: SUBMITCREATEACCOUNTFORMSUCCESS,
+  payload,
+
+});
+export const submitCreateAccountFormError = (payload) => ({
+  type: SUBMITCREATEACCOUNTFORMERROR,
+  payload,
+});
+
+export const addFollowed = (payload) => ({
+  type: ADDFOLLOWED,
+  payload,
+});
+
+export const removeFollowed = (payload) => ({
+  type: REMOVEFOLLOWED,
+  payload,
+})
+
 export const selectUnit = (payload) => ({
   type: SELECT_UNIT,
   payload,

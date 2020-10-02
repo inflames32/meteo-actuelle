@@ -55,7 +55,7 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "*",
-    "webpack-merge": "*"
+    "webpack-merge": "^5.1.4"
   },
   "dependencies": {
     "argv": "0.0.2",
@@ -73,6 +73,8 @@
     "redux": "*",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^1.2.1",
-    "styled-components": "*"
+    "styled-components": "*",
+    "surge": "^0.21.6",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ApiSuccess from '../components/Weather/ApiSuccess';
 
-import { selectUnit } from '../store/actions';
+import { selectUnit, addFollowed, removeFollowed } from '../store/actions';
 
 const mapState = (state) => ({
   city: state.user.city,
@@ -10,12 +10,22 @@ const mapState = (state) => ({
   API: state.user.API,
   loading: state.user.loading,
   apiSuccess: state.user.apiSuccess,
+  followed: state.user.followed,
 });
 
 const mapDispatch = (dispatch) => ({
   selectUnit: (units) => {
     dispatch(selectUnit(units));
   },
+
+  addFollowed: () => {
+    dispatch(addFollowed());
+  },
+
+  removeFollowed: () => {
+    dispatch(removeFollowed());
+  },
 });
+
 
 export default connect(mapState, mapDispatch)(ApiSuccess);

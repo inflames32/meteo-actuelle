@@ -2,12 +2,28 @@
   padding-top: 2em;
 }
 
-.apiSuccess-container{
-  width: 30%;
+.apiSuccess-container {
+  width: 40%;
   margin: auto;
-  background-color: #1D70BF;
-  padding-top: 2em;
-  padding-bottom: 2em;  
+  background-color: #15428c;
+
+  padding-bottom: 2em;
   border-radius: 5px;
   margin-top: 2em;
+  color: white;
+  &-button {
+    padding-top: 1em;
+  }
+}
+.container-heart {
+  width: 30%;
+  margin: auto;
+  margin-top: 1em;
+}
+
+.container-heart > svg {
+  width: 2em;
+  height: 2em;
+  margin: auto;
+  margin-top: 1em;
 }

@@ -1,14 +1,35 @@
-.container-create-account {
-  width: 80vw;
-  margin: auto;
-  min-height: auto;
-  max-height: 100vh;
-  background-color: #2d3748;
+.createaccount-container {
+  width: 100vw;
+  min-height: 100vh;
+  max-height: auto;
+  background-color: #267edb;
   text-align: center;
   justify-content: center;
-  display: flex;
-  justify-content: space-evenly;
   &-contact {
     display: flex;
   }
+}
+.createaccount-body {
+  height: 75vh;
+}
+
+.createaccount-form {
+  padding-top: 5em;
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.createaccount-form-email,
+.createaccount-form-password,
+.createaccount-form-password_confirm {
+  height: 3em !important;
+  width: 30vw;
+  margin: auto;
+  margin-top: 1em;
+}
+
+.createaccount-form-button {
+  margin-top: 2em;
 }

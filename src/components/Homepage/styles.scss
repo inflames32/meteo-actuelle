@@ -1,21 +1,16 @@
 .homepage-container {
   width: 100vw;
-  min-height: auto;
-  max-height: 100vh;
-  background-color: #2d3748;
+  min-height: 100vh;
+  max-height: auto;
+  background-color: #267edb;
   text-align: center;
 }
-.homepage-body{
-  height: 70vh;
+.homepage-body {
+  height: 75vh;
 }
-
 
 .homepage-title {
   display: flex;
   border: 1px solid black;
   justify-content: space-between;
-}
-
-.test {
-  background-color: red;
 }

@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 
 // == Import components
 import Homepage from '../Homepage';
-import CreateAccount from '../CreateAccount';
+import CreateAccount from '../../containers/CreateAccount';
 import Contact from '../Contact';
 
 import store from '../../store';
@@ -21,7 +21,7 @@ const App = () => (
 
       <Route exact path="/" component={Homepage} />
       <Route exact path="/contact" component={Contact} />
-      <Route exact path="/create-account" component={CreateAccount} />
+      <Route exact path="/signup" component={CreateAccount} />
       <Route component="/404" />
     </Switch>
   </Provider>

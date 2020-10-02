@@ -20,7 +20,7 @@ const Weather = ({ API, apiSuccess }) => {
 
     <div className="container-weather">
       <div className="container-title">
-        <span>Aujourd'hui, nous sommes le {date}</span>
+        <span>Aujourd'hui nous sommes le {date}</span>
         <span> et il est {time}</span>
         {apiSuccess && (
           <ApiSuccess />

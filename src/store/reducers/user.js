@@ -7,9 +7,21 @@ import {
   ON_FORM_LOGIN_SUCCESS,
   ON_INPUT_CHANGE,
   SELECT_UNIT,
+  ADDFOLLOWED,
+  REMOVEFOLLOWED,
+  ONCREATEACCOUNTINPUTCHANGE,
+  SUBMITCREATEACCOUNTFORM,
+  SUBMITCREATEACCOUNTFORMSUCCESS,
+  SUBMITCREATEACCOUNTFORMERROR,
 } from '../actions';
 
 const initialState = {
+  createAccount: {
+    email: '',
+    password: '',
+    passwordConfirm: ''
+  },
+  followed: false,
   userId: '',
   isLogged: '',
   loadingLoginSubmit: false,
@@ -22,6 +34,7 @@ const initialState = {
   messageError: '',
   lang: 'fr',
   apiSuccess: false,
+
   loginData: {
     email: '',
     password: '',
@@ -31,6 +44,44 @@ const initialState = {
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
+    case ONCREATEACCOUNTINPUTCHANGE:
+      return {
+        ...state,
+        createAccount: {
+          ...state.createAccount,
+          ...action.payload,
+        },
+      };
+
+    case SUBMITCREATEACCOUNTFORM:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case SUBMITCREATEACCOUNTFORMSUCCESS:
+      return {
+        ...state,
+        loading: false,
+      };
+
+    case SUBMITCREATEACCOUNTFORMERROR:
+      return {
+        ...state,
+        loading: false,
+      };
+
+    case ADDFOLLOWED:
+      return {
+        ...state,
+        followed: true,
+      };
+
+    case REMOVEFOLLOWED:
+      return {
+        ...state,
+        followed: !state.followed,
+      };
     case SELECT_UNIT:
       return {
         ...state,

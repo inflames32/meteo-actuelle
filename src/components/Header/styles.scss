@@ -1,10 +1,12 @@
 .header-container {
+  color: #D9E5EF!important;
+  background-color: #122229;
   display: flex;
   flex-direction: row;
   width: 100vw;
-  height: 20vh;
+  height: 15vh;
   justify-content: space-between;
-  line-height: 20vh;
+  line-height: 15vh;
   align-items: center;
   &-title{
     width: 30%;
@@ -15,6 +17,14 @@
   &-login{
     width: 30%;
   }
+}
+
+a {
+  color: #D9E5EF!important;
+}
+
+a:hover{
+  color: #7E9635!important;
 }
 
 

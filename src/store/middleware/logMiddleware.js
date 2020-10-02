@@ -8,6 +8,9 @@ import {
   ON_FORM_LOGIN,
   onFormLoginError,
   onFormLoginSuccess,
+  submitCreateAccountForm,
+  submitCreateAccountFormError,
+  submitCreateAccountFormSuccess, SUBMITCREATEACCOUNTFORM,
 } from '../actions';
 
 const logMiddleware = (store) => (next) => (action) => {
@@ -15,6 +18,23 @@ const logMiddleware = (store) => (next) => (action) => {
 
   next(action);
   switch (action.type) {
+
+    case SUBMITCREATEACCOUNTFORM: {
+      const devUrl = 'localhost:3000';
+      axios({
+        method: 'post',
+        url: `http://${devUrl}/signup`,
+        data: store.getState().user.createAccount,
+      }).then((res) => {
+        console.log(res.data);
+        store.dispatch(submitCreateAccountFormSuccess());
+      }).catch((error) => {
+        console.log(error);
+        store.dispatch(submitCreateAccountFormError(error));
+      });
+      break;
+    }
+
     case ON_FORM_LOGIN: {
       const devUrl = 'localhost:3000';
       const data = store.getState().user.loginData;
@@ -47,7 +67,7 @@ const logMiddleware = (store) => (next) => (action) => {
         url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${unity}&appid=${API_KEY}&lang=${language}`,
       }).then((res) => {
         console.log(res);
-        console.log('data ----', res.data);
+        // console.log('data ----', res.data);
         store.dispatch(submitSuccess(res.data));
       }).catch((err) => {
         store.dispatch(submitError(err));
