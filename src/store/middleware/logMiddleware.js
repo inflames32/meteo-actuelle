@@ -16,16 +16,17 @@ const logMiddleware = (store) => (next) => (action) => {
   next(action);
   switch (action.type) {
     case SUBMITCREATEACCOUNTFORM: {
-      const devUrl = 'localhost:3000';
+      // const url = 'localhost:3000'; // dev url
+      const url = 'whatsweathertoday.herokuapp.com'; // produ url
       axios({
         method: 'post',
-        url: `http://${devUrl}/signup`,
+        url: `http://${url}/signup`,
         data: store.getState().user.createAccount,
       }).then((res) => {
-        console.log(res.data);
-        store.dispatch(submitCreateAccountFormSuccess());
+        console.log(res.data, 'compte crée avec succès');
+        store.dispatch(submitCreateAccountFormSuccess(res.data));
       }).catch((error) => {
-        console.log(error);
+        console.log(error, 'une erreur c\'est produite');
         store.dispatch(submitCreateAccountFormError(error));
       });
       break;

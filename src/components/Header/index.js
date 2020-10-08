@@ -10,6 +10,7 @@ const Header = ({
   loginData,
   id,
   message,
+  loading,
 }) => {
   const url = `/my-account/${id}`;
   return (
@@ -39,7 +40,7 @@ const Header = ({
             to="/"
             className="header-container-title"
           >What's the weather today?
-            </Link>
+          </Link>
           <Link to={url}>
             <span
               className="header-container-myaccount"
@@ -50,6 +51,9 @@ const Header = ({
         </div>
       )}
       <span>{message}</span>
+      {loading && (
+        <div>...en cours de connexion...</div>
+      )}
     </div>
   );
 };

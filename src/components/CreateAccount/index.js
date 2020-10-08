@@ -8,7 +8,8 @@ import './createAccount.scss';
 const CreateAccount = ({
   createAccount,
   onCreateAccountInputChange,
-  submitCreateAccountForm
+  submitCreateAccountForm,
+  message,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -28,7 +29,7 @@ const CreateAccount = ({
       <Header />
 
       <div className="createaccount-body">
-        <h1>Créer son compte</h1>
+        <h1 className="createAccount-title">Créer son compte</h1>
         <div>
           <form
             className="createaccount-form"
@@ -42,6 +43,7 @@ const CreateAccount = ({
               value={createAccount.email}
               placeholder="email"
               onChange={handleInputChange}
+              focus
             />
             <Input
               className="createaccount-form-password"
@@ -61,14 +63,9 @@ const CreateAccount = ({
               focus
               onChange={handleInputChange}
             />
-            <div
-              className="createaccount-form-button"
-            >
-              <Button
-                type="submit"
-              >
-                Je crée mon compte
-              </Button>
+            <div className="createAccount-form-button">
+              <Button type="submit">Je crée mon compte</Button>
+              {message && (<p className="message">{message}</p>)}
             </div>
           </form>
         </div>

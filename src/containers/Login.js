@@ -6,6 +6,8 @@ import { onFormLogin, onInputChange } from '../store/actions';
 const mapState = (state) => ({
   loginData: state.user.loginData,
   loadingLoginSubmit: state.user.loadingLoginSubmit,
+  isLogged: state.user.isLogged,
+  loading: state.user.loading,
 });
 
 const mapDispatch = (dispatch) => ({

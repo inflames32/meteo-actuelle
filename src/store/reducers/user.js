@@ -65,12 +65,14 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         loading: false,
+        message: 'ton compte a été crée! ',
       };
 
     case SUBMITCREATEACCOUNTFORMERROR:
       return {
         ...state,
         loading: false,
+        message: 'impossible de créer ton compte!',
       };
 
     case ADDFOLLOWED:
@@ -161,6 +163,5 @@ export default (state = initialState, action = {}) => {
 
     default:
       return state;
-
   }
 };
