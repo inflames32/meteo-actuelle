@@ -19,7 +19,7 @@ const ApiSuccess = ({ API, units, selectUnit, followed, addFollowed, removeFollo
       <div className="apiSuccess-container-button">
         <Button type="button" primary onClick={(evt) => selectUnit(evt.target.value)} value="metric">°C</Button>
         <Button type="button" secondary onClick={(evt) => selectUnit(evt.target.value)} value="imperial">°F</Button>
-        <div className="container-city_name">{API.name} {API.sys.country}
+        <div className="container-city_name">{API.name} ({API.sys.country})
         </div>
       </div>
       <img src={weatherIcon} alt="icon_weather" />

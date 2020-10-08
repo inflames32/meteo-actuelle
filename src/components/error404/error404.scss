@@ -1,0 +1,23 @@
+.error404-container {
+    width: 100vw;
+    min-height: 100vh;
+    max-height: auto;
+    background-color: #267edb;
+    text-align: center;
+}
+
+.error404-body {
+    padding-top: 10em;
+    height: 75vh;
+    background-color: white;
+    width: 80vw;
+    margin: auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 1.5em;
+}
+
+.error404-body-comm {
+    padding-top: 2em;
+    font-weight: bold;
+}

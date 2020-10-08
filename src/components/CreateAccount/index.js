@@ -1,15 +1,18 @@
 import React from 'react';
+import { Input, Button } from 'semantic-ui-react';
 import Header from '../Header';
 import Footer from '../Footer';
-import { Input, Button } from 'semantic-ui-react';
 
 import './createAccount.scss';
 
-const CreateAccount = ({ createAccount, onCreateAccountInputChange, submitCreateAccountForm }) => {
-
+const CreateAccount = ({
+  createAccount,
+  onCreateAccountInputChange,
+  submitCreateAccountForm
+}) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log('je click pour créer le compte');
+    console.log('je clic pour créer le compte');
     submitCreateAccountForm();
   };
 
@@ -34,7 +37,8 @@ const CreateAccount = ({ createAccount, onCreateAccountInputChange, submitCreate
           >
             <Input
               className="createaccount-form-email"
-              type="email" name="email"
+              type="email"
+              name="email"
               value={createAccount.email}
               placeholder="email"
               onChange={handleInputChange}
@@ -45,18 +49,26 @@ const CreateAccount = ({ createAccount, onCreateAccountInputChange, submitCreate
               name="password"
               value={createAccount.password}
               placeholder="mot de passe"
-              focus onChange={handleInputChange} />
+              focus
+              onChange={handleInputChange}
+            />
             <Input
               className="createaccount-form-password_confirm"
-              type="password" name="passwordConfirm"
+              type="password"
+              name="passwordConfirm"
               value={createAccount.passwordConfirm}
               placeholder="confirmation du mot de passe"
               focus
-              onChange={handleInputChange} />
+              onChange={handleInputChange}
+            />
             <div
-              className="createaccount-form-button">
+              className="createaccount-form-button"
+            >
               <Button
-                type="submit">Je crée mon compte</Button>
+                type="submit"
+              >
+                Je crée mon compte
+              </Button>
             </div>
           </form>
         </div>
@@ -64,7 +76,7 @@ const CreateAccount = ({ createAccount, onCreateAccountInputChange, submitCreate
       <Footer />
     </div>
 
-  )
+  );
 };
 
 export default CreateAccount;

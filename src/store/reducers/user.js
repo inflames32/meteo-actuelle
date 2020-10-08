@@ -13,16 +13,17 @@ import {
   SUBMITCREATEACCOUNTFORM,
   SUBMITCREATEACCOUNTFORMSUCCESS,
   SUBMITCREATEACCOUNTFORMERROR,
+  ON_FORM_LOGIN,
 } from '../actions';
 
 const initialState = {
   createAccount: {
     email: '',
     password: '',
-    passwordConfirm: ''
+    passwordConfirm: '',
   },
+  id: '',
   followed: false,
-  userId: '',
   isLogged: '',
   loadingLoginSubmit: false,
   loading: false,
@@ -34,10 +35,11 @@ const initialState = {
   messageError: '',
   lang: 'fr',
   apiSuccess: false,
-
+  message: '',
   loginData: {
     email: '',
     password: '',
+    id: '',
   },
   weatherAPI: '',
 };
@@ -129,22 +131,36 @@ export default (state = initialState, action = {}) => {
         isLogged: false,
       };
 
+    case ON_FORM_LOGIN:
+      return {
+        ...state,
+        loadingLoginSubmit: true,
+      };
+
     case ON_FORM_LOGIN_ERROR:
       return {
         ...state,
         loadingLoginSubmit: false,
         userId: '',
         isLogged: false,
+        message: 'erreur de connexion à votre compte',
       };
+
     case ON_FORM_LOGIN_SUCCESS:
       return {
         ...state,
+        id: action.payload,
         loadingLoginSubmit: false,
         isLogged: true,
-        userId: state.userId,
+        loginData: {
+          ...state.loginData,
+          id: action.payload,
+        },
+        message: 'vous êtes connecté',
       };
 
     default:
       return state;
+
   }
 };

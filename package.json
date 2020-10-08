@@ -39,7 +39,7 @@
     "eslint-plugin-react": "*",
     "eslint-plugin-react-hooks": "*",
     "file-loader": "*",
-    "html-webpack-plugin": "*",
+    "html-webpack-plugin": "^4.5.0",
     "ignore-styles": "*",
     "mini-css-extract-plugin": "*",
     "mocha": "*",

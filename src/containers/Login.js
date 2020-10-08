@@ -1,12 +1,9 @@
 import { connect } from 'react-redux';
-import Login from '../components/Login.save';
+import Login from '../components/Login';
 
 import { onFormLogin, onInputChange } from '../store/actions';
 
 const mapState = (state) => ({
-  email: state.user.email,
-  password: state.user.password,
-  userId: state.user.userId,
   loginData: state.user.loginData,
   loadingLoginSubmit: state.user.loadingLoginSubmit,
 });

@@ -1,12 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 // == Import components
 import Homepage from '../Homepage';
 import CreateAccount from '../../containers/CreateAccount';
-import Contact from '../Contact';
+// import Contact from '../Contact';
+import Login from '../../containers/Login';
+import Error404 from '../error404';
 
 import store from '../../store';
 
@@ -20,9 +21,10 @@ const App = () => (
     <Switch>
 
       <Route exact path="/" component={Homepage} />
-      <Route exact path="/contact" component={Contact} />
+      {/* <Route exact path="/contact" component={Contact} /> */}
+      <Route exact path="/signin" component={Login} />
       <Route exact path="/signup" component={CreateAccount} />
-      <Route component="/404" />
+      <Route component={Error404} />
     </Switch>
   </Provider>
 );
