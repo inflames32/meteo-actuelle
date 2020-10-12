@@ -2,6 +2,7 @@ export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 export const INPUT_CITY_CHANGE = 'INPUT_CITY_CHANGE';
 export const SUBMIT = 'SUBMIT';
+export const OPEN_BURGER_MENU = 'OPEN_BURGER_MENU';
 
 // = Login
 export const ON_INPUT_CHANGE = 'ON_INPUT_CHANGE';
@@ -13,20 +14,26 @@ export const ON_FORM_LOGIN_SUCCESS = 'ON_FORM_LOGIN_SUCCESS';
 
 export const SELECT_UNIT = 'SELECT_UNIT';
 
-//= followed
+// = followed
 export const ADDFOLLOWED = 'ADDFOLLOWED';
 export const REMOVEFOLLOWED = 'REMOVEFOLLOWED';
 
-//=createAccount
+// = createAccount
 export const ONCREATEACCOUNTINPUTCHANGE = 'ONCREATEACCOUNTINPUTCHANGE';
 export const SUBMITCREATEACCOUNTFORM = 'SUBMITCREATEACCOUNTFORM';
 export const SUBMITCREATEACCOUNTFORMSUCCESS = 'SUBMITCREATEACCOUNTFORMSUCCESS';
 export const SUBMITCREATEACCOUNTFORMERROR = 'SUBMITCREATEACCOUNTFORMERROR';
 
+// = openBurgerMenu
+export const openBurgerMenu = () => ({
+  type: OPEN_BURGER_MENU,
+});
+
 export const onCreateAccountInputChange = (payload) => ({
   type: ONCREATEACCOUNTINPUTCHANGE,
   payload,
-})
+});
+
 export const submitCreateAccountForm = () => ({
   type: SUBMITCREATEACCOUNTFORM,
 });

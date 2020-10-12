@@ -14,9 +14,11 @@ import {
   SUBMITCREATEACCOUNTFORMSUCCESS,
   SUBMITCREATEACCOUNTFORMERROR,
   ON_FORM_LOGIN,
+  OPEN_BURGER_MENU,
 } from '../actions';
 
 const initialState = {
+  menuBurgerIsOpen: false,
   createAccount: {
     email: '',
     password: '',
@@ -46,6 +48,12 @@ const initialState = {
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
+    case OPEN_BURGER_MENU:
+      return {
+        ...state,
+        menuBurgerIsOpen: true,
+      };
+
     case ONCREATEACCOUNTINPUTCHANGE:
       return {
         ...state,

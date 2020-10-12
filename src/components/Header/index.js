@@ -11,11 +11,15 @@ const Header = ({
   id,
   message,
   loading,
+  openBurgerMenu,
+  menuBurgerIsOpen,
 }) => {
   const url = `/my-account/${id}`;
-  const onClickBurgerMenu = () => {
-    console.log('je click');
-  }
+
+  const handleBurgerMenu = () => {
+    console.log('je clic');
+    openBurgerMenu();
+  };
   return (
     <div className="header">
       {!isLogged && (
@@ -35,7 +39,7 @@ const Header = ({
             className="header-container-login"
           >Connexion
             </Link>
-          <a className="burger-menu" onClick={onClickBurgerMenu}>||| </a>
+          <a className="burger-menu" onClick={handleBurgerMenu}> ||| </a>
         </div>
       )}
       {isLogged && (
@@ -61,7 +65,36 @@ const Header = ({
           <div>...en cours de connexion...</div>
         )
       }
-    </div >
+      <div>
+        {menuBurgerIsOpen
+          && (
+            <ul>
+              <li>
+                <Link
+                  to="/"
+                  className="header-container-title"
+                >What's the weather today?
+      </Link>
+              </li>
+              <li>
+                <Link
+                  to="/signup"
+                  className="header-container-create"
+                >Créer ton compte?
+      </Link>
+              </li>
+              <li>
+                <Link
+                  to="/signin"
+                  className="header-container-login"
+                >Connexion
+      </Link>
+              </li>
+            </ul>
+          )
+        }
+      </div>
+    </div>
   );
 };
 

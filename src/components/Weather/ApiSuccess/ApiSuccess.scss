@@ -27,3 +27,9 @@
   margin: auto;
   margin-top: 1em;
 }
+
+@media screen and (max-width: 650px) {
+  .apiSuccess-container {
+    width: auto;
+  }
+}
