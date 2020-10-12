@@ -30,6 +30,7 @@ const Login = ({
         <div className="login-container">
             <Header />
             <div className="login-body">
+                <h1 className="createAccount-title">Connexion à mon compte</h1>
                 <form className="login-form" onSubmit={handleSubmit}>
                     {!loadingLoginSubmit && (
                         <div className="login-body-input">

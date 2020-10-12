@@ -13,6 +13,9 @@ const Header = ({
   loading,
 }) => {
   const url = `/my-account/${id}`;
+  const onClickBurgerMenu = () => {
+    console.log('je click');
+  }
   return (
     <div className="header">
       {!isLogged && (
@@ -32,6 +35,7 @@ const Header = ({
             className="header-container-login"
           >Connexion
             </Link>
+          <a className="burger-menu" onClick={onClickBurgerMenu}>||| </a>
         </div>
       )}
       {isLogged && (
@@ -49,12 +53,15 @@ const Header = ({
           </Link>
           <Button>Déconnexion</Button>
         </div>
-      )}
+      )
+      }
       <span>{message}</span>
-      {loading && (
-        <div>...en cours de connexion...</div>
-      )}
-    </div>
+      {
+        loading && (
+          <div>...en cours de connexion...</div>
+        )
+      }
+    </div >
   );
 };
 

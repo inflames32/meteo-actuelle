@@ -33,6 +33,7 @@ const SearchBar = ({
 
         <Input
           className="search-bar"
+          placeholder="nom de la ville à rechercher"
           type="text"
           value={city}
           onChange={(evt) => {
@@ -50,7 +51,7 @@ const SearchBar = ({
           <Button
             className="container-button"
             type="submit"
-          >OK
+          >Rechercher la ville
           </Button>
         )}
       </form>

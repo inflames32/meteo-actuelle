@@ -11,3 +11,10 @@
     margin: auto;
   }
 }
+
+@media screen and (max-width: 650px) {
+  .footer-container {
+    height: 5vh;
+    line-height: 5vh;
+  }
+}

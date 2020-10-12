@@ -14,3 +14,9 @@
   border: 1px solid black;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 650px) {
+  .homepage-body {
+    height: 89vh;
+  }
+}

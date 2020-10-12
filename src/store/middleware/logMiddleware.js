@@ -4,7 +4,6 @@ import {
   ON_FORM_LOGIN,
   onFormLoginError,
   onFormLoginSuccess,
-  submitCreateAccountForm,
   submitCreateAccountFormError,
   submitCreateAccountFormSuccess,
   SUBMITCREATEACCOUNTFORM,
