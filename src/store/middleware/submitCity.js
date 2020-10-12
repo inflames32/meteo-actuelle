@@ -11,7 +11,6 @@ const submitCity = (store) => (next) => (action) => {
 
     next(action);
     switch (action.type) {
-
         case SUBMIT: {
             const API_KEY = process.env.REACT_APP_API_KEY;
             const cityName = store.getState().user.city;

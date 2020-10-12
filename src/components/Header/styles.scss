@@ -46,15 +46,14 @@ a:hover {
     height: 5vh;
     line-height: 5vh;
   }
-  a:hover {
-    color: red !important;
-  }
+
   .header-container-create,
   .header-container-login {
     width: 30%;
     height: 2vh;
     display: none;
   }
+
   .burger-menu {
     color: white;
     width: 5vw;
@@ -64,17 +63,25 @@ a:hover {
     display: block;
     margin-right: 5vw;
   }
+
   .burger-menu:hover {
     color: white;
     width: 5vw;
     height: 5vh;
     line-height: 5vh;
     transform: rotate(90deg) !important;
+    cursor: pointer;
   }
+
   .header-container-title {
     width: auto;
     height: 5vh;
     padding-left: 0px;
     margin-left: 5vw;
   }
+}
+
+.burgermenuisopen {
+  display: flex;
+  height: 4vh !important;
 }

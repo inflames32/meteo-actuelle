@@ -18,7 +18,7 @@ import {
 } from '../actions';
 
 const initialState = {
-  menuBurgerIsOpen: false,
+  menuBurgerIsOpen: true,
   createAccount: {
     email: '',
     password: '',
@@ -51,7 +51,7 @@ export default (state = initialState, action = {}) => {
     case OPEN_BURGER_MENU:
       return {
         ...state,
-        menuBurgerIsOpen: true,
+        menuBurgerIsOpen: !state.openBurgerMenu,
       };
 
     case ONCREATEACCOUNTINPUTCHANGE:

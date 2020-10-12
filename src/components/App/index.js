@@ -8,6 +8,7 @@ import CreateAccount from '../../containers/CreateAccount';
 // import Contact from '../Contact';
 import Login from '../../containers/Login';
 import Error404 from '../error404';
+import Header from '../../containers/Header';
 
 import store from '../../store';
 
@@ -19,7 +20,6 @@ const App = () => (
 
   <Provider store={store}>
     <Switch>
-
       <Route exact path="/" component={Homepage} />
       {/* <Route exact path="/contact" component={Contact} /> */}
       <Route exact path="/signin" component={Login} />

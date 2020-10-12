@@ -11,15 +11,15 @@ const Header = ({
   id,
   message,
   loading,
-  openBurgerMenu,
+  openingMenu,
   menuBurgerIsOpen,
 }) => {
   const url = `/my-account/${id}`;
 
-  const handleBurgerMenu = () => {
-    console.log('je clic');
-    openBurgerMenu();
-  };
+  // const handleBurgerMenu = () => {
+  //   openBurgerMenu();
+  //   console.log('je clic');
+  // };
   return (
     <div className="header">
       {!isLogged && (
@@ -28,36 +28,44 @@ const Header = ({
             to="/"
             className="header-container-title"
           >What's the weather today?
-            </Link>
+          </Link>
           <Link
             to="/signup"
             className="header-container-create"
           >Créer ton compte?
-            </Link>
+          </Link>
           <Link
             to="/signin"
             className="header-container-login"
           >Connexion
-            </Link>
-          <a className="burger-menu" onClick={handleBurgerMenu}> ||| </a>
+          </Link>
+          <a
+            className="burger-menu"
+            onClick={() => {
+              console.log('je clic');
+              openingMenu();
+            }}
+          > |||
+          </a>
         </div>
       )}
-      {isLogged && (
-        <div className="header-container">
-          <Link
-            to="/"
-            className="header-container-title"
-          >What's the weather today?
-          </Link>
-          <Link to={url}>
-            <span
-              className="header-container-myaccount"
-            >{loginData.email}
-            </span>
-          </Link>
-          <Button>Déconnexion</Button>
-        </div>
-      )
+      {
+        isLogged && (
+          <div className="header-container">
+            <Link
+              to="/"
+              className="header-container-title"
+            >What's the weather today?
+            </Link>
+            <Link to={url}>
+              <span
+                className="header-container-myaccount"
+              >{loginData.email}
+              </span>
+            </Link>
+            <Button>Déconnexion</Button>
+          </div>
+        )
       }
       <span>{message}</span>
       {
@@ -65,35 +73,31 @@ const Header = ({
           <div>...en cours de connexion...</div>
         )
       }
-      <div>
-        {menuBurgerIsOpen
-          && (
-            <ul>
-              <li>
-                <Link
-                  to="/"
-                  className="header-container-title"
-                >What's the weather today?
-      </Link>
-              </li>
+
+      {
+        menuBurgerIsOpen
+        && (
+          <div>
+            <ul className="burgermenuisopen">
               <li>
                 <Link
                   to="/signup"
                   className="header-container-create"
                 >Créer ton compte?
-      </Link>
+                </Link>
               </li>
               <li>
                 <Link
                   to="/signin"
                   className="header-container-login"
                 >Connexion
-      </Link>
+                </Link>
               </li>
             </ul>
-          )
-        }
-      </div>
+          </div>
+        )
+      }
+
     </div>
   );
 };
@@ -103,6 +107,7 @@ Header.prototypes = {
   loginData: PropTypes.object.isRequired,
   id: PropTypes.number.isRequired,
   message: PropTypes.string.isRequired,
+  openingMenu: PropTypes.func.isRequired,
 };
 
 export default Header;

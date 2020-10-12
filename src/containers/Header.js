@@ -11,7 +11,8 @@ const mapState = (state) => ({
 });
 
 const mapDispatch = (dispatch) => ({
-    openBurgerMenu: () => {
+    openingMenu: () => {
+        console.log('openingMenu in container');
         dispatch(openBurgerMenu());
     },
 });
