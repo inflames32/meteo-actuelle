@@ -81,19 +81,19 @@ const Header = ({
       {
         menuBurgerIsOpen
         && (
-          <div className="burgermenuisopen">
+          <div className="burgermenu--isopen">
             <ul>
               <li>
                 <Link
                   to="/signup"
-                  className="burgermenuisopen-create"
+                  className="burgermenu--isopen-create"
                 >Créer ton compte?
                 </Link>
               </li>
               <li>
                 <Link
                   to="/signin"
-                  className="burgermenuisopen-login"
+                  className="burgermenu--isopen-login"
                 >Connexion
                 </Link>
               </li>

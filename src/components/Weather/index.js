@@ -1,7 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import ApiSuccess from '../../containers/ApiSuccess';
+import ApiSuccess from './ApiSuccess';
 
 import './styles.scss';
 
@@ -35,4 +36,14 @@ Weather.propTypes = {
   API: PropTypes.object.isRequired,
 };
 
-export default Weather;
+const mapState = (state) => ({
+  city: state.user.city,
+  units: state.user.units,
+  API: state.user.API,
+  loading: state.user.loading,
+  apiSuccess: state.user.apiSuccess,
+});
+
+const mapDispatch = null;
+
+export default connect(mapState, mapDispatch)(Weather);

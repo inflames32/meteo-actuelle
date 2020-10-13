@@ -1,8 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Input, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import Header from '../Header';
 import Footer from '../Footer';
+
+import { onFormLogin, onInputChange } from '../../store/actions';
 
 import './login.scss';
 
@@ -113,4 +116,22 @@ Login.propTypes = {
     loginData: PropTypes.object.isRequired,
 };
 
-export default Login;
+const mapState = (state) => ({
+    loginData: state.user.loginData,
+    loadingLoginSubmit: state.user.loadingLoginSubmit,
+    isLogged: state.user.isLogged,
+    loading: state.user.loading,
+});
+
+const mapDispatch = (dispatch) => ({
+    onInputChange: (changedData) => {
+        console.log(changedData);
+        dispatch(onInputChange(changedData));
+    },
+    onFormLogin: () => {
+        console.log(onFormLogin);
+        dispatch(onFormLogin());
+    },
+});
+
+export default connect(mapState, mapDispatch)(Login);

@@ -4,11 +4,10 @@ import { Route, Switch } from 'react-router-dom';
 
 // == Import components
 import Homepage from '../Homepage';
-import CreateAccount from '../../containers/CreateAccount';
+import CreateAccount from '../CreateAccount';
 // import Contact from '../Contact';
-import Login from '../../containers/Login';
+import Login from '../Login';
 import Error404 from '../error404';
-import Header from '../../containers/Header';
 
 import store from '../../store';
 

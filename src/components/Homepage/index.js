@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header';
-import SearchBar from '../../containers/SearchBar';
-import Weather from '../../containers/Weather';
+import SearchBar from '../SearchBar';
+import Weather from '../Weather';
 import Footer from '../Footer';
 import './styles.scss';
 

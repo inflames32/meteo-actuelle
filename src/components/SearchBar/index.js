@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import { Input, Button } from 'semantic-ui-react';
+
+import { inputCityChange, submit } from '../../store/actions';
 
 import './styles.scss';
 
@@ -66,4 +69,23 @@ SearchBar.propTypes = {
   onInputChange: propTypes.func.isRequired,
 };
 
-export default SearchBar;
+const mapState = (state) => ({
+  city: state.user.city,
+  cityZipCode: state.user.cityZipCode,
+  units: state.user.units,
+  data: state.user.data,
+  loading: state.user.loading,
+});
+
+const mapDispatch = (dispatch) => ({
+  onInputChange: (changeInput) => {
+    console.log(changeInput);
+    dispatch(inputCityChange(changeInput));
+  },
+  submitCitySearch: () => {
+    console.log();
+    dispatch(submit());
+  },
+});
+
+export default connect(mapState, mapDispatch)(SearchBar);
