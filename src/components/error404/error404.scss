@@ -21,3 +21,10 @@
     padding-top: 2em;
     font-weight: bold;
 }
+
+@media screen and (max-width: 650px) {
+    .error404-body {
+        height: 90vh;
+        box-sizing: border-box;
+    }
+}

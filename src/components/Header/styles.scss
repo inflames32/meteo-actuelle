@@ -39,6 +39,11 @@ a:hover {
   color: #7e9635 !important;
 }
 
+.burgermenuisopen-create,
+.burgermenuisopen-login {
+  display: none;
+}
+
 @media screen and (max-width: 650px) {
   .header-container {
     color: #d9e5ef !important;
@@ -52,6 +57,13 @@ a:hover {
     width: 30%;
     height: 2vh;
     display: none;
+  }
+
+  .header-container-title {
+    width: auto;
+    height: 5vh;
+    padding-left: 0px;
+    margin-left: 5vw;
   }
 
   .burger-menu {
@@ -73,15 +85,26 @@ a:hover {
     cursor: pointer;
   }
 
-  .header-container-title {
-    width: auto;
-    height: 5vh;
-    padding-left: 0px;
-    margin-left: 5vw;
+  .burgermenuisopen {
+    margin: auto;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    height: 4vh !important;
   }
-}
+  .burgermenuisopen > li {
+    margin: auto;
+    width: 30vw;
+    justify-content: center;
+    height: 4vh !important;
+    background-color: red;
+  }
 
-.burgermenuisopen {
-  display: flex;
-  height: 4vh !important;
+  .burgermenuisopen-create,
+  .burgermenuisopen-login {
+    background-color: red;
+  }
+  input {
+    width: 30vw;
+  }
 }

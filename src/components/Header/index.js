@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { openBurgerMenu } from '../../store/actions';
 
 import './styles.scss';
 
@@ -11,15 +13,17 @@ const Header = ({
   id,
   message,
   loading,
-  openingMenu,
+  openBurgerMenu,
   menuBurgerIsOpen,
 }) => {
   const url = `/my-account/${id}`;
+  console.log(menuBurgerIsOpen, 'menu');
 
-  // const handleBurgerMenu = () => {
-  //   openBurgerMenu();
-  //   console.log('je clic');
-  // };
+  const handleBurgerMenu = (evt) => {
+    evt.preventDefault();
+    openBurgerMenu();
+    console.log('le menu s\'ouvre');
+  };
   return (
     <div className="header">
       {!isLogged && (
@@ -41,15 +45,15 @@ const Header = ({
           </Link>
           <a
             className="burger-menu"
-            onClick={() => {
-              console.log('je clic');
-              openingMenu();
-            }}
-          > |||
+            onClick={
+              handleBurgerMenu
+            }
+          >|||
           </a>
+
         </div>
-      )}
-      {
+      )
+      }{
         isLogged && (
           <div className="header-container">
             <Link
@@ -77,19 +81,19 @@ const Header = ({
       {
         menuBurgerIsOpen
         && (
-          <div>
-            <ul className="burgermenuisopen">
+          <div className="burgermenuisopen">
+            <ul>
               <li>
                 <Link
                   to="/signup"
-                  className="header-container-create"
+                  className="burgermenuisopen-create"
                 >Créer ton compte?
                 </Link>
               </li>
               <li>
                 <Link
                   to="/signin"
-                  className="header-container-login"
+                  className="burgermenuisopen-login"
                 >Connexion
                 </Link>
               </li>
@@ -110,4 +114,18 @@ Header.prototypes = {
   openingMenu: PropTypes.func.isRequired,
 };
 
-export default Header;
+const mapState = (state) => ({
+  loginData: state.user.loginData,
+  isLogged: state.user.islogged,
+  loading: state.user.loading,
+  menuBurgerIsOpen: state.user.menuBurgerIsOpen,
+});
+
+const mapDispatch = (dispatch) => ({
+  openBurgerMenu: () => {
+    console.log('openingMenu in container');
+    dispatch(openBurgerMenu());
+  },
+});
+
+export default connect(mapState, mapDispatch)(Header);

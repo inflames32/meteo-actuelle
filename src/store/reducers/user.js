@@ -51,7 +51,7 @@ export default (state = initialState, action = {}) => {
     case OPEN_BURGER_MENU:
       return {
         ...state,
-        menuBurgerIsOpen: !state.openBurgerMenu,
+        menuBurgerIsOpen: !state.menuBurgerIsOpen,
       };
 
     case ONCREATEACCOUNTINPUTCHANGE:

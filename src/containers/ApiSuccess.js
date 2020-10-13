@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ApiSuccess from '../components/Weather/ApiSuccess';
 
-import { selectUnit, addFollowed, removeFollowed } from '../store/actions';
+
 
 const mapState = (state) => ({
   city: state.user.city,
