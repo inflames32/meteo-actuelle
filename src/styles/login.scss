@@ -21,6 +21,7 @@
 .login-form-email,
 .login-form-password {
     height: 3em !important;
+    min-width: 280px;
     width: 30vw;
     margin: auto;
     margin-top: 1em;
@@ -42,4 +43,20 @@
     padding-top: 2em;
     width: 15vw;
     margin: auto;
+}
+@media screen and (max-width: 650px) {
+    .login-body {
+        width: 100vw;
+        min-height: 90vh;
+        max-height: auto;
+        background-color: #267edb;
+        text-align: center;
+    }
+    .login-form-email,
+    .login-form-password {
+        height: 3em !important;
+        min-width: 280px;
+        margin: auto;
+        margin-top: 1em;
+    }
 }

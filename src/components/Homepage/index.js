@@ -3,7 +3,7 @@ import Header from '../Header';
 import SearchBar from '../SearchBar';
 import Weather from '../Weather';
 import Footer from '../Footer';
-import './styles.scss';
+import '../../styles/homepage.scss';
 
 const Homepage = () => (
   <div className="homepage-container">

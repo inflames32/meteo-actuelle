@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 
-import './error404.scss';
+import '../../styles/error404.scss';
 
 const error404 = () => (
     <div className="error404-container">

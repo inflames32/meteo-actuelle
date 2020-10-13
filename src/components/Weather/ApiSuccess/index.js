@@ -4,10 +4,9 @@ import { Button } from 'semantic-ui-react';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { selectUnit, addFollowed, removeFollowed } from '../../../store/actions';
 
-import './ApiSuccess.scss';
+import '../../../styles/ApiSuccess.scss';
 
 const ApiSuccess = ({ API, units, selectUnit, followed, addFollowed, removeFollowed }) => {
-  console.log('api----', API);
   const temp = API.main.temp.toFixed(1);
   const tempFeel = API.main.feels_like.toFixed(1);
   const windInKmByHour = Math.trunc(API.wind.speed * 3.6);

@@ -4,15 +4,15 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import ApiSuccess from './ApiSuccess';
 
-import './styles.scss';
+import '../../styles/weather.scss';
 
 const Weather = ({ API, apiSuccess }) => {
   // state.API
-  console.log(API);
+  //console.log(API);
   // renvoi api
-  console.log(apiSuccess);
+  //console.log(apiSuccess);
   const locale = moment.locale('fr');
-  console.log(locale);
+  //console.log(locale);
   // const date = moment().format('LL');
   // const time = moment().format('LT');
   const date = moment().locale('fr').format('dddd, Do MMMM YYYY');

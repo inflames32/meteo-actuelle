@@ -6,7 +6,7 @@ import { submitCreateAccountForm, onCreateAccountInputChange } from '../../store
 import Header from '../Header';
 import Footer from '../Footer';
 
-import './createAccount.scss';
+import '../../styles/createAccount.scss';
 
 const CreateAccount = ({
   createAccount,

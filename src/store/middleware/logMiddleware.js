@@ -7,6 +7,9 @@ import {
   submitCreateAccountFormError,
   submitCreateAccountFormSuccess,
   SUBMITCREATEACCOUNTFORM,
+  LOGOUT,
+  logoutSuccess,
+  logoutError,
 } from '../actions';
 
 const logMiddleware = (store) => (next) => (action) => {
@@ -15,12 +18,14 @@ const logMiddleware = (store) => (next) => (action) => {
   next(action);
   switch (action.type) {
     case SUBMITCREATEACCOUNTFORM: {
-      // const url = 'localhost:3000'; // dev url
-      const url = 'whatsweathertoday.herokuapp.com'; // produ url
+      //const url = 'http://localhost:3000'; // dev url
+      const url = 'https://whatsweathertoday.herokuapp.com';
+
       axios({
         method: 'post',
-        url: `http://${url}/signup`,
+        url: `${url}/signup`,
         data: store.getState().user.createAccount,
+        withCredentials: true,
       }).then((res) => {
         console.log(res.data, 'compte crée avec succès');
         store.dispatch(submitCreateAccountFormSuccess(res.data));
@@ -32,12 +37,14 @@ const logMiddleware = (store) => (next) => (action) => {
     }
 
     case ON_FORM_LOGIN: {
-      const devUrl = 'localhost:3000';
+      // const url = 'http://localhost:3000';
+      const url = 'https://whatsweathertoday.herokuapp.com';
       const data = store.getState().user.loginData;
       axios({
         method: 'post',
-        url: `http://${devUrl}/login`,
+        url: `${url}/login`,
         data,
+        withCredentials: true,
       }).then((res) => {
         if (res.data === 'cant find user with this id') {
           store.dispatch(onFormLoginError("E-mail and password doesn't matchs"));
@@ -48,6 +55,22 @@ const logMiddleware = (store) => (next) => (action) => {
       }).catch((err) => {
         store.dispatch(onFormLoginError(err, 'utilisateur inconnu'));
       });
+      break;
+    }
+
+    case LOGOUT: {
+      // const url = 'http://:localhost:3000';
+      const url = 'https://whatsweathertoday.herokuapp.com';
+      axios({
+        method: 'post',
+        url: `${url}/logout`,
+      }).then((res) => {
+        console.log(res.data);
+        store.dispatch(logoutSuccess());
+      })
+        .catch((err) => {
+          console.error(err);
+        });
       break;
     }
     default:

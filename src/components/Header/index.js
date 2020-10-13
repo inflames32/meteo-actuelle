@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { openBurgerMenu } from '../../store/actions';
+import { openBurgerMenu, logout } from '../../store/actions';
 
-import './styles.scss';
+import '../../styles/header.scss';
 
 const Header = ({
   isLogged,
@@ -15,14 +15,13 @@ const Header = ({
   loading,
   openBurgerMenu,
   menuBurgerIsOpen,
+  handleBtnLogout
 }) => {
   const url = `/my-account/${id}`;
-  console.log(menuBurgerIsOpen, 'menu');
-
-  const handleBurgerMenu = (evt) => {
-    evt.preventDefault();
+  //console.log(isLogged, '----');
+  //console.log(loginData, '----');
+  const handleBurgerMenu = () => {
     openBurgerMenu();
-    console.log('le menu s\'ouvre');
   };
   return (
     <div className="header">
@@ -31,7 +30,7 @@ const Header = ({
           <Link
             to="/"
             className="header-container-title"
-          >What's the weather today?
+          >Météo actuelle
           </Link>
           <Link
             to="/signup"
@@ -52,37 +51,36 @@ const Header = ({
           </a>
 
         </div>
-      )
-      }{
-        isLogged && (
-          <div className="header-container">
-            <Link
-              to="/"
-              className="header-container-title"
-            >What's the weather today?
+      )}
+      {isLogged && (
+        <div className="header-container">
+          <Link
+            to="/"
+            className="header-container-title"
+          >What's the weather today?
             </Link>
-            <Link to={url}>
-              <span
-                className="header-container-myaccount"
-              >{loginData.email}
-              </span>
-            </Link>
-            <Button>Déconnexion</Button>
-          </div>
-        )
-      }
+          <Link to={url}>
+            <span
+              className="header-container-myaccount"
+            >{loginData.email}
+            </span>
+          </Link>
+          <Button
+            className="deconnexion"
+            type="button"
+            onClick={handleBtnLogout}
+          >Déconnexion
+          </Button>
+        </div>
+      )}
       <span>{message}</span>
-      {
-        loading && (
-          <div>...en cours de connexion...</div>
-        )
-      }
-
-      {
-        menuBurgerIsOpen
+      {loading && (
+        <div>...en cours de connexion...</div>
+      )}
+      {menuBurgerIsOpen
         && (
           <div className="burgermenu--isopen">
-            <ul>
+            <ul className="burgermenu--isopen-ul">
               <li>
                 <Link
                   to="/signup"
@@ -99,9 +97,7 @@ const Header = ({
               </li>
             </ul>
           </div>
-        )
-      }
-
+        )}
     </div>
   );
 };
@@ -116,15 +112,18 @@ Header.prototypes = {
 
 const mapState = (state) => ({
   loginData: state.user.loginData,
-  isLogged: state.user.islogged,
+  isLogged: state.user.isLogged,
   loading: state.user.loading,
   menuBurgerIsOpen: state.user.menuBurgerIsOpen,
+  message: state.user.message,
 });
 
 const mapDispatch = (dispatch) => ({
   openBurgerMenu: () => {
-    console.log('openingMenu in container');
     dispatch(openBurgerMenu());
+  },
+  handleBtnLogout: () => {
+    dispatch(logout());
   },
 });
 

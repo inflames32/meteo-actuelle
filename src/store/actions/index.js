@@ -3,6 +3,9 @@ export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 export const INPUT_CITY_CHANGE = 'INPUT_CITY_CHANGE';
 export const SUBMIT = 'SUBMIT';
 export const OPEN_BURGER_MENU = 'OPEN_BURGER_MENU';
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
+export const LOGOUT = 'LOGOUT';
+export const LOGOUT_ERROR = 'LOGOUT_ERROR';
 
 // = Login
 export const ON_INPUT_CHANGE = 'ON_INPUT_CHANGE';
@@ -23,6 +26,17 @@ export const ONCREATEACCOUNTINPUTCHANGE = 'ONCREATEACCOUNTINPUTCHANGE';
 export const SUBMITCREATEACCOUNTFORM = 'SUBMITCREATEACCOUNTFORM';
 export const SUBMITCREATEACCOUNTFORMSUCCESS = 'SUBMITCREATEACCOUNTFORMSUCCESS';
 export const SUBMITCREATEACCOUNTFORMERROR = 'SUBMITCREATEACCOUNTFORMERROR';
+
+export const logout = () => ({
+  type: LOGOUT,
+});
+export const logoutSuccess = () => ({
+  type: LOGOUT_SUCCESS,
+});
+
+export const logoutError = () => ({
+  type: LOGOUT_ERROR,
+});
 
 // = openBurgerMenu
 export const openBurgerMenu = () => ({

@@ -8,11 +8,11 @@ import CreateAccount from '../CreateAccount';
 // import Contact from '../Contact';
 import Login from '../Login';
 import Error404 from '../error404';
-
+import Header from '../Header';
 import store from '../../store';
 
 import 'semantic-ui-css/semantic.min.css';
-import './styles.scss';
+import '../../styles/app.scss';
 
 // == Composant
 const App = () => (

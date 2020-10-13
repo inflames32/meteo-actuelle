@@ -7,7 +7,7 @@ import Footer from '../Footer';
 
 import { onFormLogin, onInputChange } from '../../store/actions';
 
-import './login.scss';
+import '../../styles/login.scss';
 
 const Login = ({
     loginData,
@@ -121,6 +121,7 @@ const mapState = (state) => ({
     loadingLoginSubmit: state.user.loadingLoginSubmit,
     isLogged: state.user.isLogged,
     loading: state.user.loading,
+    message: state.user.message,
 });
 
 const mapDispatch = (dispatch) => ({

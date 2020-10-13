@@ -5,7 +5,7 @@ import { Input, Button } from 'semantic-ui-react';
 
 import { inputCityChange, submit } from '../../store/actions';
 
-import './styles.scss';
+import '../../styles/searchBar.scss';
 
 const SearchBar = ({
   loading,

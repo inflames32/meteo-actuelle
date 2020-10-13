@@ -9,6 +9,7 @@
   align-items: center;
   &-title {
     margin: auto;
+    color: #d9e5ef !important;
   }
 }
 
@@ -17,5 +18,8 @@
     height: 5vh;
     line-height: 5vh;
     width: 100vw;
+    &-title {
+      color: #d9e5ef !important;
+    }
   }
 }

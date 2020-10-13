@@ -15,18 +15,20 @@ import {
   SUBMITCREATEACCOUNTFORMERROR,
   ON_FORM_LOGIN,
   OPEN_BURGER_MENU,
+  LOGOUT,
+  LOGOUT_SUCCESS,
+  LOGOUT_ERROR,
 } from '../actions';
 
 const initialState = {
-  menuBurgerIsOpen: true,
+  menuBurgerIsOpen: false,
   createAccount: {
     email: '',
     password: '',
     passwordConfirm: '',
   },
-  id: '',
   followed: false,
-  isLogged: '',
+  isLogged: false,
   loadingLoginSubmit: false,
   loading: false,
   city: '',
@@ -48,6 +50,29 @@ const initialState = {
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
+    case LOGOUT:
+      return {
+        ...state,
+        message: 'déconnexion en cours...',
+      };
+    case LOGOUT_SUCCESS:
+      return {
+        ...state,
+        message: 'déconnexion réussie',
+        isLogged: false,
+        loginData: {
+          email: '',
+          password: '',
+          id: '',
+        },
+      };
+    case LOGOUT_ERROR:
+      return {
+        ...state,
+        message: 'problème de déconnexion',
+        isLogged: true,
+      };
+
     case OPEN_BURGER_MENU:
       return {
         ...state,
@@ -159,7 +184,6 @@ export default (state = initialState, action = {}) => {
     case ON_FORM_LOGIN_SUCCESS:
       return {
         ...state,
-        id: action.payload,
         loadingLoginSubmit: false,
         isLogged: true,
         loginData: {

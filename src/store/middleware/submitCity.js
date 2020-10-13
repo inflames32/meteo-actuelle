@@ -20,7 +20,7 @@ const submitCity = (store) => (next) => (action) => {
                 method: 'get',
                 url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${unity}&appid=${API_KEY}&lang=${language}`,
             }).then((res) => {
-                console.log(res);
+                //   console.log(res);
                 store.dispatch(submitSuccess(res.data));
             }).catch((err) => {
                 store.dispatch(submitError(err));
