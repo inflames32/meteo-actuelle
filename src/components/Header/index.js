@@ -77,25 +77,19 @@ const Header = ({
       {loading && (
         <div>...en cours de connexion...</div>
       )}
-      {menuBurgerIsOpen
+      {menuBurgerIsOpen && !isLogged
         && (
-          <div className="burgermenu--isopen">
-            <ul className="burgermenu--isopen-ul">
-              <li>
-                <Link
-                  to="/signup"
-                  className="burgermenu--isopen-create"
-                >Créer ton compte?
+          <div className="header-submenu">
+            <Link
+              to="/signup"
+              className="header-submenu-create"
+            >Créer ton compte?
                 </Link>
-              </li>
-              <li>
-                <Link
-                  to="/signin"
-                  className="burgermenu--isopen-login"
-                >Connexion
+            <Link
+              to="/signin"
+              className="header-submenu-login"
+            >Connexion
                 </Link>
-              </li>
-            </ul>
           </div>
         )}
     </div>

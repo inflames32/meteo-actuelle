@@ -1,12 +1,11 @@
 .homepage-container {
   width: 100vw;
-  min-height: 100vh;
-  max-height: auto;
+  height: 100vh;
   background-color: #267edb;
   text-align: center;
 }
 .homepage-body {
-  height: 75vh;
+  height: 80vh;
 }
 
 .homepage-title {
@@ -15,8 +14,12 @@
   justify-content: space-between;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 746px) {
   .homepage-body {
-    height: 90vh;
+    max-height: auto;
+  }
+  .homepage-container {
+    min-height: 80vh;
+    max-height: auto;
   }
 }
