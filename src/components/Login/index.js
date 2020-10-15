@@ -49,6 +49,7 @@ const Login = ({
                                 className="login-form-password"
                                 type="password"
                                 name="password"
+                                autoComplete="off"
                                 value={loginData.password}
                                 placeholder="mot de passe"
                                 focus
