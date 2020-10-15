@@ -111,7 +111,7 @@ const Login = ({
 Login.propTypes = {
     onInputChange: PropTypes.func.isRequired,
     onFormLogin: PropTypes.func.isRequired,
-    loadingLoginSubmit: PropTypes.func.isRequired,
+    loadingLoginSubmit: PropTypes.bool.isRequired,
     isLogged: PropTypes.bool.isRequired,
     message: PropTypes.string.isRequired,
     loginData: PropTypes.object.isRequired,

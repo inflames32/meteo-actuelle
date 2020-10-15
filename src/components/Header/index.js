@@ -17,7 +17,7 @@ const Header = ({
   menuBurgerIsOpen,
   handleBtnLogout
 }) => {
-  const url = `/my-account/${id}`;
+  const url = `/user/${loginData.id}`;
   //console.log(isLogged, '----');
   //console.log(loginData, '----');
   const handleBurgerMenu = () => {
@@ -57,8 +57,8 @@ const Header = ({
           <Link
             to="/"
             className="header-container-title"
-          >What's the weather today?
-            </Link>
+          >Météo Actuelle
+          </Link>
           <Link to={url}>
             <span
               className="header-container-myaccount"
@@ -66,7 +66,7 @@ const Header = ({
             </span>
           </Link>
           <Button
-            className="deconnexion"
+            className="header-container-logout"
             type="button"
             onClick={handleBtnLogout}
           >Déconnexion

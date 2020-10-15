@@ -8,7 +8,7 @@ import CreateAccount from '../CreateAccount';
 // import Contact from '../Contact';
 import Login from '../Login';
 import Error404 from '../error404';
-import Header from '../Header';
+import User from '../User';
 import store from '../../store';
 
 import 'semantic-ui-css/semantic.min.css';
@@ -23,6 +23,7 @@ const App = () => (
       {/* <Route exact path="/contact" component={Contact} /> */}
       <Route exact path="/signin" component={Login} />
       <Route exact path="/signup" component={CreateAccount} />
+      <Route exact path="/user/:id" component={User} />
       <Route component={Error404} />
     </Switch>
   </Provider>
