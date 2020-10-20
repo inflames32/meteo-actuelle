@@ -127,9 +127,11 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => ({
     onInputChange: (changedData) => {
+        console.log(changedData);
         dispatch(onInputChange(changedData));
     },
     onFormLogin: () => {
+        console.log(onFormLogin);
         dispatch(onFormLogin());
     },
 });

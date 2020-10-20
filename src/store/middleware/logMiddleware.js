@@ -18,7 +18,9 @@ const logMiddleware = (store) => (next) => (action) => {
   next(action);
   switch (action.type) {
     case SUBMITCREATEACCOUNTFORM: {
-      const url = process.env.REACT_APP_URL_PROD;
+      //const url = 'http://localhost:3000'; // dev url
+      const url = 'https://whatsweathertoday.herokuapp.com';
+
       axios({
         method: 'post',
         url: `${url}/signup`,
@@ -35,7 +37,8 @@ const logMiddleware = (store) => (next) => (action) => {
     }
 
     case ON_FORM_LOGIN: {
-      const url = process.env.REACT_APP_URL_PROD;
+      // const url = 'http://localhost:3000';
+      const url = 'https://whatsweathertoday.herokuapp.com';
       const data = store.getState().user.loginData;
       axios({
         method: 'post',
@@ -56,7 +59,8 @@ const logMiddleware = (store) => (next) => (action) => {
     }
 
     case LOGOUT: {
-      const url = process.env.REACT_APP_URL_PROD;
+      // const url = 'http://:localhost:3000';
+      const url = 'https://whatsweathertoday.herokuapp.com';
       axios({
         method: 'post',
         url: `${url}/logout`,
