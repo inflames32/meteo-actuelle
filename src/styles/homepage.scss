@@ -1,6 +1,7 @@
 .homepage-container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: auto;
   background-color: #267edb;
   text-align: center;
 }
@@ -19,7 +20,7 @@
     max-height: auto;
   }
   .homepage-container {
-    min-height: 80vh;
+    min-height: 100vh;
     max-height: auto;
   }
 }

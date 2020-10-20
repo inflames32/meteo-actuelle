@@ -73,7 +73,6 @@ const Header = ({
           </Button>
         </div>
       )}
-      <span>{message}</span>
       {loading && (
         <div>...en cours de connexion...</div>
       )}

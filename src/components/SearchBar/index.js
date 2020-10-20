@@ -47,7 +47,10 @@ const SearchBar = ({
 
         />
         {loading && (
-          <Button basic loading />
+          <Button
+            type="submit"
+            className="container-button"
+            loading />
         )}
 
         {!loading && (
