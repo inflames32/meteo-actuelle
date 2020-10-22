@@ -1,0 +1,35 @@
+.container-city_name {
+  padding-top: 2em;
+}
+
+.apiSuccess-container {
+  width: 40%;
+  margin: auto;
+  background-color: #15428c;
+
+  padding-bottom: 2em;
+  border-radius: 5px;
+  margin-top: 2em;
+  color: white;
+  &-button {
+    padding-top: 1em;
+  }
+}
+.container-heart {
+  width: 30%;
+  margin: auto;
+  margin-top: 1em;
+}
+
+.container-heart > svg {
+  width: 2em;
+  height: 2em;
+  margin: auto;
+  margin-top: 1em;
+}
+
+@media screen and (max-width: 650px) {
+  .apiSuccess-container {
+    width: auto;
+  }
+}
