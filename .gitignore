@@ -6,3 +6,4 @@ yarn-error.log
 .env
 .env_development
 .env_dev
+.env_prod
