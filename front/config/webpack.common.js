@@ -26,7 +26,7 @@ module.exports = {
         {
           from: paths.static,
           to: '',
-        }
+        },
       ],
     }),
 
