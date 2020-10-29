@@ -3,7 +3,5 @@ dist/
 .DS_Store
 Thumbs.db
 yarn-error.log
+.env.development
 .env
-.env_development
-.env_dev
-.env_prod
