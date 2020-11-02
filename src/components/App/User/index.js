@@ -37,3 +37,4 @@ const mapState = (state) => ({
 // });
 
 export default connect(mapState, mapDispatch)(User);
+
