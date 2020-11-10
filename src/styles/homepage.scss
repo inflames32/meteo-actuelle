@@ -17,10 +17,20 @@
 
 @media screen and (max-width: 746px) {
   .homepage-body {
-    height: 88vh;
+    height: 87vh;
   }
   .homepage-container {
     min-height: 100vh;
     max-height: auto;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .homepage-container {
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+  .homepage-body {
+    height: 94vh;
   }
 }
