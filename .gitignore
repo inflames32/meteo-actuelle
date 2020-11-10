@@ -4,3 +4,4 @@ dist/
 Thumbs.db
 yarn-error.log
 .env
+.netlify

@@ -1,7 +1,7 @@
 .homepage-container {
   width: 100vw;
   min-height: 100vh;
-  max-height: auto;
+  max-height: 100vh;
   background-color: #267edb;
   text-align: center;
 }
@@ -17,7 +17,7 @@
 
 @media screen and (max-width: 746px) {
   .homepage-body {
-    max-height: auto;
+    height: 88vh;
   }
   .homepage-container {
     min-height: 100vh;

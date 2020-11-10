@@ -10,7 +10,7 @@
   }
 }
 .createaccount-body {
-  height: 75vh;
+  height: 80vh;
 }
 
 .createaccount-form {
@@ -42,4 +42,7 @@
 
 .createAccount-title {
   padding-top: 5em;
+}
+.required {
+  color: red;
 }

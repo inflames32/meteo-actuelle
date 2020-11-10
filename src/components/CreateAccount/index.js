@@ -13,6 +13,7 @@ const CreateAccount = ({
   onCreateAccountInputChange,
   submitCreateAccountForm,
   message,
+  disabled,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -39,35 +40,49 @@ const CreateAccount = ({
             action="submit"
             onSubmit={handleSubmit}
           >
-            <Input
-              className="createaccount-form-email"
-              type="email"
-              name="email"
-              value={createAccount.email}
-              placeholder="email"
-              onChange={handleInputChange}
-              focus
-            />
-            <Input
-              className="createaccount-form-password"
-              type="password"
-              name="password"
-              value={createAccount.password}
-              placeholder="mot de passe"
-              focus
-              onChange={handleInputChange}
-            />
-            <Input
-              className="createaccount-form-password_confirm"
-              type="password"
-              name="passwordConfirm"
-              value={createAccount.passwordConfirm}
-              placeholder="confirmation du mot de passe"
-              focus
-              onChange={handleInputChange}
-            />
+            <div>Les champs marqués d'un <span className="required">*</span> sont obligatoires</div>
+            <div>
+              <Input
+                className="createaccount-form-email"
+                type="email"
+                name="email"
+                value={createAccount.email}
+                placeholder="email"
+                onChange={handleInputChange}
+                focus
+              />
+              <span className="required"> *</span>
+            </div>
+            <div>
+              <Input
+                className="createaccount-form-password"
+                type="password"
+                name="password"
+                value={createAccount.password}
+                placeholder="mot de passe"
+                focus
+                onChange={handleInputChange}
+              />
+              <span className="required"> *</span>
+            </div>
+            <div>
+              <Input
+                className="createaccount-form-password_confirm"
+                type="password"
+                name="passwordConfirm"
+                value={createAccount.passwordConfirm}
+                placeholder="confirmation du mot de passe"
+                focus
+                onChange={handleInputChange}
+              />
+              <span className="required"> *</span>
+            </div>
+
+
             <div className="createAccount-form-button">
-              <Button type="submit">Je crée mon compte</Button>
+              {!disabled && (
+                <Button type="submit">Je crée mon compte</Button>
+              )}
               {message && (<p className="message">{message}</p>)}
             </div>
           </form>

@@ -12,7 +12,7 @@ import User from '../User';
 import store from '../../store';
 
 import 'semantic-ui-css/semantic.min.css';
-import '../../styles/app.scss';
+import '../../styles/App.scss';
 
 // == Composant
 const App = () => (

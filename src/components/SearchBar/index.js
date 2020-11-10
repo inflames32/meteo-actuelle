@@ -43,6 +43,7 @@ const SearchBar = ({
             onInputChange(evt.target.value);
           }}
           icon="search"
+          minlenght="3"
           focus
 
         />
