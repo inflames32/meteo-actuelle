@@ -44,10 +44,21 @@
     width: 15vw;
     margin: auto;
 }
+
+@media screen and (max-width: 746px) {
+    .login-body {
+        height: 87vh;
+    }
+    .login-container {
+        min-height: 100vh;
+        max-height: auto;
+    }
+}
+
 @media screen and (max-width: 650px) {
     .login-body {
         width: 100vw;
-        min-height: 90vh;
+        min-height: 94vh;
         max-height: auto;
         background-color: #267edb;
         text-align: center;

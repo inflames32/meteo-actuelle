@@ -16,7 +16,7 @@ const Weather = ({ API, apiSuccess }) => {
   // const date = moment().format('LL');
   // const time = moment().format('LT');
   const date = moment().locale('fr').format('dddd, Do MMMM YYYY');
-  const time = moment().locale('fr').format('h:mm:ss');
+  const time = moment().locale('fr').format('HH:mm');
   return (
 
     <div className="container-weather">

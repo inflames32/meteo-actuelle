@@ -45,4 +45,25 @@
 }
 .required {
   color: red;
+  font-size: 1.4em;
+}
+
+@media screen and (max-width: 746px) {
+  .createaccount-body {
+    height: 93vh;
+  }
+  .createaccount-container {
+    min-height: 100vh;
+    max-height: auto;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .createaccount-container {
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+  .createaccount-body {
+    height: 94vh;
+  }
 }

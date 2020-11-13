@@ -74,9 +74,13 @@
 
 .header-submenu > a {
   color: white;
+  transition: 1s;
 }
 
 @media screen and (min-width: 746px) {
+  .header-submenu {
+    display: none;
+  }
   .header-container {
     color: #d9e5ef !important;
     background-color: #122229;
