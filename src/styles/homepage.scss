@@ -35,3 +35,10 @@
     height: 94vh;
   }
 }
+
+@media screen and (height: 800px) {
+  .search-bar {
+    margin: auto !important;
+    width: 60vw !important;
+  }
+}

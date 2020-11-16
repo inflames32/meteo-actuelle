@@ -6,7 +6,7 @@ import ApiSuccess from './ApiSuccess';
 
 import '../../styles/weather.scss';
 
-const Weather = ({ API, apiSuccess }) => {
+const Weather = ({ apiSuccess }) => {
   // const locale = moment.locale('fr');
   const date = moment().locale('fr').format('dddd, Do MMMM YYYY');
   const time = moment().locale('fr').format('HH:mm');

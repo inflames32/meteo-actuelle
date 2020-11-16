@@ -75,10 +75,6 @@ const Header = ({
           </Button>
         </div>
       )}
-      {loading && (
-        <div>...en cours de connexion...</div>
-
-      )}
       {menuIsOpen && !isLogged
         && (
           <div className="burger-menu-container">

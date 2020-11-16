@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button } from 'semantic-ui-react';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { selectUnit, addFollowed, removeFollowed } from '../../../store/actions';
 
@@ -10,16 +9,11 @@ const ApiSuccess = ({ API, units, selectUnit, followed, addFollowed, removeFollo
   const temp = API.main.temp.toFixed(1);
   const tempFeel = API.main.feels_like.toFixed(1);
   const windInKmByHour = Math.trunc(API.wind.speed * 3.6);
-  // const weatherIcon = `http://openweathermap.org/img/wn/04d@2x.png`;
   const weatherIcon = `http://openweathermap.org/img/wn/${API.weather.[0].icon}@2x.png`;
-  // const metricUnit = '°C';
-  // const imperialInit = '°F';
 
   return (
     <div className="apiSuccess-container">
       <div className="apiSuccess-container-button">
-        {/* <Button type="button" primary onClick={(evt) => selectUnit(evt.target.value)} value="metric">°C</Button>
-        <Button type="button" secondary onClick={(evt) => selectUnit(evt.target.value)} value="imperial">°F</Button> */}
         <div className="container-city_name">{API.name} ({API.sys.country})
         </div>
       </div>

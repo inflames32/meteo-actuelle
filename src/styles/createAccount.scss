@@ -67,3 +67,17 @@
     height: 94vh;
   }
 }
+
+@media screen and (height: 800px) {
+  .search-bar {
+    margin: auto !important;
+    width: 60vw !important;
+  }
+  .createaccount-form-password,
+  .createaccount-form-email,
+  .createaccount-form-password_confirm {
+    margin: auto !important;
+    width: 60vw !important;
+    padding-top: 1em !important;
+  }
+}

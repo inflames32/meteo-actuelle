@@ -9,24 +9,30 @@
 
 .search-bar {
   height: 3em !important;
+  height: 3em !important;
+  width: 40vw;
 }
 
 @media screen and (max-width: 650px) {
+  .search-bar {
+    height: 3em !important;
+    width: 60% !important;
+    margin: auto !important;
+    border: black !important;
+  }
+  .container-searchbar {
+    width: 100% !important;
+  }
   .form-input {
     padding-top: 2em;
     display: flex;
     flex-direction: column;
-    width: 80vw;
     margin: auto;
   }
+
   .container-button {
     width: auto !important;
     margin: auto !important;
     margin-top: 1em !important;
-  }
-  .search-bar {
-    height: 3em !important;
-    width: 40vw;
-    margin: auto;
   }
 }

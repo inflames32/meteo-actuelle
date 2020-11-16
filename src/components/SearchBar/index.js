@@ -5,7 +5,7 @@ import { Input, Button } from 'semantic-ui-react';
 
 import { inputCityChange, submit } from '../../store/actions';
 
-import '../../styles/searchBar.scss';
+import '../../styles/search-bar.scss';
 
 const SearchBar = ({
   loading,
@@ -21,7 +21,7 @@ const SearchBar = ({
   };
 
   return (
-    <div className="container_searchbar">
+    <div className="container-searchbar">
       <form
         className="form-input"
         action="GET"
@@ -43,7 +43,6 @@ const SearchBar = ({
             onInputChange(evt.target.value);
           }}
           icon="search"
-          minlenght="3"
           focus
 
         />
@@ -51,7 +50,8 @@ const SearchBar = ({
           <Button
             type="submit"
             className="container-button"
-            loading />
+            loading
+          />
         )}
 
         {!loading && (
@@ -71,6 +71,8 @@ SearchBar.propTypes = {
   city: propTypes.string.isRequired,
   submitCitySearch: propTypes.func.isRequired,
   onInputChange: propTypes.func.isRequired,
+  messageError: propTypes.string.isRequired,
+  messageSuccess: propTypes.string.isRequired,
 };
 
 const mapState = (state) => ({
@@ -83,11 +85,9 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => ({
   onInputChange: (changeInput) => {
-    console.log(changeInput);
     dispatch(inputCityChange(changeInput));
   },
   submitCitySearch: () => {
-    console.log();
     dispatch(submit());
   },
 });
