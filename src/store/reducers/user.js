@@ -14,14 +14,15 @@ import {
   SUBMITCREATEACCOUNTFORMSUCCESS,
   SUBMITCREATEACCOUNTFORMERROR,
   ON_FORM_LOGIN,
-  OPEN_BURGER_MENU,
+  OPEN_MENU,
+  CLOSE_MENU,
   LOGOUT,
   LOGOUT_SUCCESS,
   LOGOUT_ERROR,
 } from '../actions';
 
 const initialState = {
-  menuBurgerIsOpen: false,
+  menuIsOpen: false,
   createAccount: {
     email: '',
     password: '',
@@ -50,11 +51,24 @@ const initialState = {
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
+    case OPEN_MENU:
+      return {
+        ...state,
+        menuIsOpen: true,
+      };
+
+    case CLOSE_MENU:
+      return {
+        ...state,
+        menuIsOpen: false,
+      };
+
     case LOGOUT:
       return {
         ...state,
         message: 'déconnexion en cours...',
       };
+
     case LOGOUT_SUCCESS:
       return {
         ...state,
@@ -66,17 +80,12 @@ export default (state = initialState, action = {}) => {
           id: '',
         },
       };
+
     case LOGOUT_ERROR:
       return {
         ...state,
         message: 'problème de déconnexion',
         isLogged: true,
-      };
-
-    case OPEN_BURGER_MENU:
-      return {
-        ...state,
-        menuBurgerIsOpen: !state.menuBurgerIsOpen,
       };
 
     case ONCREATEACCOUNTINPUTCHANGE:
@@ -142,7 +151,6 @@ export default (state = initialState, action = {}) => {
         ...state,
         loading: false,
         messageSuccess: 'congratulations!',
-        // API = res.data
         API: { ...action.payload },
         apiSuccess: true,
       };

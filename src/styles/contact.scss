@@ -1,14 +1,120 @@
-.container-contact {
-  width: 80vw;
-  margin: auto;
-  min-height: auto;
-  max-height: 100vh;
-  background-color: #2d3748;
+.contact-container {
+  width: 100vw;
+  min-height: 100vh;
+  max-height: auto;
+  background-color: #267edb;
   text-align: center;
   justify-content: center;
+
+  &-body {
+    height: 80vh;
+  }
+
+  &-body-title {
+    color: #white;
+    margin-bottom: 2em;
+  }
+
+  &-body-card {
+    height: 60vh;
+    width: 80vh;
+    margin: auto;
+  }
+}
+
+.card {
+  width: 50%;
+  border: 1px, grey solid;
+  height: auto;
+  margin: auto;
+}
+
+img {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.div-icon {
   display: flex;
-  justify-content: space-evenly;
-  &-contact {
-    display: flex;
+  width: 20px;
+}
+
+.name {
+  color: #a78d1c;
+}
+
+.text {
+  background-color: rgba(0, 0, 0, 0.45);
+  padding: 3px;
+}
+
+.function {
+  height: 5vh;
+  color: white;
+}
+
+.icon {
+  width: 50px;
+  margin: 5px;
+}
+h1 {
+  text-align: center;
+}
+
+.socials-networks > .div-icon {
+  padding-left: 1vw;
+  padding-right: 1vw;
+  width: 100%;
+  justify-content: space-between;
+  margin: auto;
+}
+.icon {
+  width: auto;
+}
+
+@media only screen and (max-width: 750px) {
+  /* Styles */
+  .contact-container {
+    height: 100vh;
+    &-body {
+      width: 80%;
+      margin: auto;
+      min-height: 87vh;
+      max-height: auto;
+    }
+    &-body-card {
+      padding-top: 10em;
+      margin: auto;
+      width: 80vw;
+    }
+
+    &-body-title {
+      margin-bottom: 3vh;
+    }
+  }
+
+  .card {
+    width: 40vw;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .contact-container {
+    min-height: 100vh;
+    max-height: 100vh;
+    &-body {
+      height: 94vh;
+      &-card {
+        padding-top: 10vh;
+      }
+    }
+  }
+  .card {
+    width: 60vw;
+    margin: auto;
+  }
+  .icon {
+    width: 40px;
   }
 }

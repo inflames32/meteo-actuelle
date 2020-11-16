@@ -7,22 +7,14 @@ import ApiSuccess from './ApiSuccess';
 import '../../styles/weather.scss';
 
 const Weather = ({ API, apiSuccess }) => {
-  // state.API
-  //console.log(API);
-  // renvoi api
-  //console.log(apiSuccess);
-  const locale = moment.locale('fr');
-  //console.log(locale);
-  // const date = moment().format('LL');
-  // const time = moment().format('LT');
+  // const locale = moment.locale('fr');
   const date = moment().locale('fr').format('dddd, Do MMMM YYYY');
   const time = moment().locale('fr').format('HH:mm');
   return (
 
     <div className="container-weather">
       <div className="container-title">
-        <span>Aujourd'hui nous sommes le {date}</span>
-        <span> et il est {time}</span>
+        <span> {date} {time}</span>
         {apiSuccess && (
           <ApiSuccess />
         )}

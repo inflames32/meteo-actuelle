@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { openBurgerMenu, logout } from '../../store/actions';
+import { openMenu, logout, closeMenu } from '../../store/actions';
 
 import '../../styles/header.scss';
+import '../../styles/burger-menu.scss';
 
 const Header = ({
   isLogged,
@@ -14,15 +15,15 @@ const Header = ({
   id,
   message,
   loading,
-  openBurgerMenu,
-  menuBurgerIsOpen,
-  handleBtnLogout
+  menuIsOpen,
+  openMenu,
+  handleBtnLogout,
+  closeMenu,
 }) => {
   const url = `/user/${loginData.id}`;
-  //console.log(isLogged, '----');
-  //console.log(loginData, '----');
+
   const handleBurgerMenu = () => {
-    openBurgerMenu();
+    openMenu();
   };
   return (
     <div className="header">
@@ -78,19 +79,80 @@ const Header = ({
         <div>...en cours de connexion...</div>
 
       )}
-      {menuBurgerIsOpen && !isLogged
+      {menuIsOpen && !isLogged
         && (
-          <div className="header-submenu">
-            <Link
-              to="/signup"
-              className="header-submenu-create"
-            >Créer ton compte?
-                </Link>
-            <Link
-              to="/signin"
-              className="header-submenu-login"
-            >Connexion
-                </Link>
+          <div className="burger-menu-container">
+            <nav className="burger-menu-navigation">
+              <div
+                className="close-menu"
+                onClick={
+                  closeMenu
+                }
+              >X
+              </div>
+              <Link
+                to="/signup"
+                className="burger-menu-containe-create menu-item"
+                onClick={
+                  closeMenu
+                }
+              >Créer ton compte?
+              </Link>
+              <Link
+                to="/signin"
+                className="burger-menu-container-login menu-item"
+                onClick={
+                  closeMenu
+                }
+              >Connexion
+              </Link>
+              <Link
+                to="/contact"
+                className="burger-menu-container-contact menu-item"
+                onClick={
+                  closeMenu
+                }
+              >Contact
+              </Link>
+            </nav>
+          </div>
+        )}
+      {menuIsOpen && isLogged
+        && (
+          <div className="burger-menu-container">
+            <nav className="burger-menu-navigation">
+              <div
+                className="close-menu"
+                onClick={
+                  closeMenu
+                }
+              >X
+              </div>
+              <Link
+                to="/signup"
+                className="burger-menu-containe-create menu-item"
+                onClick={
+                  closeMenu
+                }
+              >Accéder à ton compte?
+              </Link>
+              <Link
+                to="/signin"
+                className="burger-menu-container-login menu-item"
+                onClick={
+                  closeMenu
+                }
+              >Déconnexion
+              </Link>
+              <Link
+                to="/contact"
+                className="burger-menu-container-contact menu-item"
+                onClick={
+                  closeMenu
+                }
+              >Contact
+              </Link>
+            </nav>
           </div>
         )}
     </div>
@@ -109,17 +171,23 @@ const mapState = (state) => ({
   loginData: state.user.loginData,
   isLogged: state.user.isLogged,
   loading: state.user.loading,
-  menuBurgerIsOpen: state.user.menuBurgerIsOpen,
+  menuIsOpen: state.user.menuIsOpen,
   message: state.user.message,
+  menuBurgerIsOpen: state.user.menuBurgerIsOpen,
+
 });
 
 const mapDispatch = (dispatch) => ({
-  openBurgerMenu: () => {
-    dispatch(openBurgerMenu());
+  openMenu: () => {
+    dispatch(openMenu());
+  },
+  closeMenu: () => {
+    dispatch(closeMenu());
   },
   handleBtnLogout: () => {
     dispatch(logout());
   },
+
 });
 
 export default connect(mapState, mapDispatch)(Header);

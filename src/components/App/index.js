@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 // == Import components
 import Homepage from '../Homepage';
 import CreateAccount from '../CreateAccount';
-// import Contact from '../Contact';
+import Contact from '../Contact';
 import Login from '../Login';
 import Error404 from '../error404';
 import User from '../User';
@@ -20,7 +20,7 @@ const App = () => (
   <Provider store={store}>
     <Switch>
       <Route exact path="/" component={Homepage} />
-      {/* <Route exact path="/contact" component={Contact} /> */}
+      <Route exact path="/contact" component={Contact} />
       <Route exact path="/signin" component={Login} />
       <Route exact path="/signup" component={CreateAccount} />
       <Route exact path="/user/:id" component={User} />
