@@ -37,7 +37,7 @@ const Header = ({
           <Link
             to="/signup"
             className="header-container-create"
-          >Créer ton compte?
+          >Créer ton compte
           </Link>
           <Link
             to="/signin"
@@ -67,12 +67,19 @@ const Header = ({
             >{loginData.email}
             </span>
           </Link>
-          <Button
-            className="header-container-logout"
-            type="button"
+          <Link
+            to="/"
+            className="burger-menu-container-login menu-item menu-logout"
             onClick={handleBtnLogout}
           >Déconnexion
-          </Button>
+          </Link>
+          <a
+            className="burger-menu"
+            onClick={
+              handleBurgerMenu
+            }
+          >|||
+          </a>
         </div>
       )}
       {menuIsOpen && !isLogged
@@ -125,19 +132,15 @@ const Header = ({
               >X
               </div>
               <Link
-                to="/signup"
-                className="burger-menu-containe-create menu-item"
-                onClick={
-                  closeMenu
-                }
-              >Accéder à ton compte?
+                to={url}
+                className="burger-menu-container-login menu-item"
+              >
+                {loginData.email}
               </Link>
               <Link
                 to="/signin"
                 className="burger-menu-container-login menu-item"
-                onClick={
-                  closeMenu
-                }
+                onClick={handleBtnLogout}
               >Déconnexion
               </Link>
               <Link

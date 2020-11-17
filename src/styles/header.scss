@@ -30,8 +30,10 @@
   width: auto;
   height: 2vh;
   padding-left: 0px;
-  margin-left: 5vw;
   color: white;
+}
+.header-container-myaccount {
+  display: none;
 }
 
 .burger-menu {
@@ -43,6 +45,10 @@
   display: inline-block;
   margin-right: 5vw;
   margin-top: 0.4vh;
+}
+
+.menu-logout {
+  display: none;
 }
 
 .burger-menu:hover {
@@ -92,32 +98,6 @@
     height: 10vh;
     justify-content: space-between;
     align-items: center;
-    &-title {
-      width: 20vw;
-      color: #d9e5ef !important;
-      height: 3em;
-      line-height: 3em;
-      font-weight: bold;
-      font-size: 1.2em;
-      margin-left: 3em;
-    }
-    &-create {
-      width: 20vw;
-      color: #d9e5ef !important;
-      height: 3em;
-      line-height: 3em;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    &-login {
-      width: 20vw;
-      color: #d9e5ef !important;
-      height: 3em;
-      line-height: 3em;
-      font-weight: bold;
-      font-size: 1.2em;
-      margin-right: 3em;
-    }
   }
 
   .burger-menu {
@@ -126,39 +106,44 @@
   .header-container-title,
   .header-container-create,
   .header-container-login,
-  .header-container-myaccount {
-    width: 20vw;
+  .header-container-myaccount,
+  .menu-logout {
+    width: 25%;
+    justify-content: space-evenly;
     color: #d9e5ef !important;
     height: 3em;
     line-height: 3em;
     font-weight: bold;
     font-size: 1.2em;
-    margin-left: 3em;
     display: inline-block;
-  }
-  .header-container-myaccount {
-    margin-right: 15em;
   }
 
   .header-container-create:hover,
   .header-container-login:hover,
-  .header-container-myaccount:hover {
+  .header-container-myaccount:hover,
+  .header-container-title:hover {
+    width: 25%;
     color: #122229 !important;
-    width: 20vw;
     background-color: white;
     border-radius: 1em;
+    height: 3em;
+    line-height: 3em;
+    font-weight: bold;
+    font-size: 1.2em;
     display: inline-block;
-    margin-left: 3em;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   .header-container-title:hover {
     background-color: green;
+    width: 25%;
+    color: white !important;
     border-radius: 1em;
-    color: blue;
-    width: 20vw;
+    height: 3em;
+    line-height: 3em;
+    font-weight: bold;
+    font-size: 1.2em;
     display: inline-block;
-    margin-left: 3em;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   .header-container-logout {
     width: 10vw;

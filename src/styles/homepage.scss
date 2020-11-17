@@ -1,12 +1,13 @@
 .homepage-container {
   width: 100vw;
   min-height: 100vh;
-  max-height: 100vh;
+  max-height: auto;
   background-color: #267edb;
   text-align: center;
 }
 .homepage-body {
-  height: 80vh;
+  min-height: 80vh;
+  max-height: auto;
 }
 
 .homepage-title {
@@ -16,11 +17,12 @@
 }
 
 @media screen and (max-width: 746px) {
-  .homepage-body {
-    height: 87vh;
-  }
   .homepage-container {
     min-height: 100vh;
+    max-height: auto;
+  }
+  .homepage-body {
+    height: 87vh;
     max-height: auto;
   }
 }
@@ -28,17 +30,35 @@
 @media screen and (max-width: 650px) {
   .homepage-container {
     min-height: 100vh;
-    max-height: 100vh;
-    z-index: 1;
+    max-height: auto !important;
   }
   .homepage-body {
-    height: 94vh;
+    min-height: 94vh;
+    max-height: auto !important;
   }
 }
 
-@media screen and (height: 800px) {
+@media screen and (max-width: 320px) {
+  .homepage-container {
+    min-height: 100vh;
+    max-height: auto !important;
+  }
+  .homepage-body {
+    min-height: 94vh;
+    max-height: auto !important;
+  }
+}
+
+@media screen and (max-height: 750px) {
   .search-bar {
     margin: auto !important;
     width: 60vw !important;
+  }
+  .homepage-container {
+    min-height: 100vh;
+    max-height: auto !important;
+  }
+  .homepage-body {
+    min-height: 100vh;
   }
 }
