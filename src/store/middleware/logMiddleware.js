@@ -9,12 +9,9 @@ import {
   SUBMITCREATEACCOUNTFORM,
   LOGOUT,
   logoutSuccess,
-  logoutError,
 } from '../actions';
 
 const logMiddleware = (store) => (next) => (action) => {
-  // console.log(store.getState());
-
   next(action);
   switch (action.type) {
     case SUBMITCREATEACCOUNTFORM: {

@@ -43,6 +43,7 @@ const Login = ({
                                 name="email"
                                 value={loginData.email}
                                 placeholder="email"
+                                focus
                                 onChange={formInputChange}
                             />
                             <Input
@@ -65,6 +66,7 @@ const Login = ({
                                 name="email"
                                 value={loginData.email}
                                 placeholder="email"
+                                focus
                                 onChange={formInputChange}
                                 disabled
                             />

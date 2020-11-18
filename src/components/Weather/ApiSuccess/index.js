@@ -22,7 +22,7 @@ const ApiSuccess = ({
       <div className="container-temp">
         <div className="container-temp-icon"><img src={weatherIcon} alt="icon_weather" /></div>
         <div className="container-temp-symbol">|</div>
-        <div className="container-temp-temp">{temp} °C</div>
+        <div className="container-temp-temp">{temp}<span>°C</span></div>
       </div>
       <div className="container-temp_feel">Température ressentie: {tempFeel} °C</div>
       <div className="container-city_cloud">Couverture nuageuse: {API.weather.[0].description}, {API.clouds.all} %</div>

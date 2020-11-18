@@ -2,7 +2,7 @@
     width: 100vw;
     min-height: 100vh;
     max-height: auto;
-    background-color: #267edb;
+    background-color: white;
     text-align: center;
 }
 
@@ -47,7 +47,7 @@
 
 @media screen and (max-width: 746px) {
     .login-body {
-        height: 87vh;
+        height: 81vh;
     }
     .login-container {
         min-height: 100vh;
@@ -56,12 +56,55 @@
 }
 
 @media screen and (max-width: 650px) {
+    .login-container {
+        max-height: 100vh;
+    }
+    .login-body-input {
+        padding-top: 0;
+    }
+    .login-body-button {
+        display: flex;
+        justify-content: center;
+    }
     .login-body {
         width: 100vw;
-        min-height: 94vh;
+        min-height: 88vh;
         max-height: auto;
-        background-color: #267edb;
+        background-color: white;
         text-align: center;
+        &-button {
+            margin: auto !important;
+        }
+    }
+    .login-form-email,
+    .login-form-password {
+        height: 3em !important;
+        min-width: 280px;
+        margin: auto;
+        margin-top: 1em;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .login-container {
+        max-height: 100vh;
+    }
+    .login-body-input {
+        padding-top: 0;
+    }
+    .login-body-button {
+        display: flex;
+        justify-content: center;
+    }
+    .login-body {
+        width: 100vw;
+        min-height: 88vh;
+        max-height: auto;
+        background-color: white;
+        text-align: center;
+        &-button {
+            margin: auto !important;
+        }
     }
     .login-form-email,
     .login-form-password {

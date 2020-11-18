@@ -2,12 +2,12 @@
   width: 100vw;
   min-height: 100vh;
   max-height: auto;
-  background-color: rgb(159, 192, 245);
+  background-color: white;
   text-align: center;
 }
 .homepage-body {
   min-height: 80vh;
-  max-height: auto;
+  // max-height: auto;
 }
 
 .homepage-title {
@@ -19,22 +19,22 @@
 @media screen and (max-width: 746px) {
   .homepage-container {
     min-height: 100vh;
-    max-height: auto;
+    // max-height: auto;
   }
   .homepage-body {
     height: 81vh;
-    max-height: auto;
+    //  max-height: auto;
   }
 }
 
 @media screen and (max-width: 650px) {
   .homepage-container {
     min-height: 100vh;
-    max-height: auto !important;
+    // max-height: auto !important;
   }
   .homepage-body {
     min-height: 88vh;
-    max-height: auto !important;
+    // max-height: auto !important;
   }
 }
 
@@ -44,7 +44,7 @@
     max-height: auto !important;
   }
   .homepage-body {
-    min-height: 94vh;
+    min-height: 88vh;
     max-height: auto !important;
   }
 }

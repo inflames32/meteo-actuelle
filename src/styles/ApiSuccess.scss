@@ -3,6 +3,7 @@
 }
 
 .apiSuccess-container {
+  box-shadow: 5px 5px 5px grey;
   width: 60vw;
   margin: auto;
   //background-color: #15428c;
@@ -11,7 +12,7 @@
   padding-bottom: 2em;
   border-radius: 5px;
   margin-top: 2em;
-  color: white;
+  color: rgb(63, 63, 63);
   &-button {
     padding-top: 1em;
   }
@@ -24,6 +25,8 @@
   display: flex;
   flex-direction: row;
   &-temp {
+    display: flex;
+    flex-direction: row;
     margin: auto;
     width: 40%;
     height: 5em;
@@ -56,17 +59,36 @@
 
 @media screen and (max-width: 650px) {
   .apiSuccess-container {
-    width: auto;
+    width: 80vw;
   }
   .container-temp {
+    width: 40vw;
+    margin: auto;
     height: 5em;
     display: flex;
     flex-direction: row;
     &-temp {
+      margin: auto;
+      width: 40%;
       height: 5em;
+      line-height: 5em;
+      display: flex;
+      flex-direction: row;
     }
     &-icon {
+      margin: auto;
+      width: 40%;
       height: 5em;
+      line-height: 5em;
+    }
+    // &-icon > img {
+    //   margin-top: 0.8em;
+    // }
+    &-symbol {
+      width: 5%;
+      margin: auto;
+      height: 5em;
+      line-height: 5em;
     }
   }
 }

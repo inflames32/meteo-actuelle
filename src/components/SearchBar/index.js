@@ -36,7 +36,7 @@ const SearchBar = ({
 
         <Input
           className="search-bar"
-          placeholder="nom de la ville à rechercher"
+          placeholder="nom de la ville"
           type="text"
           value={city}
           onChange={(evt) => {

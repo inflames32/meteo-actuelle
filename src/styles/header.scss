@@ -6,6 +6,7 @@
   line-height: 9vh;
   display: flex;
   justify-content: space-between;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .header-container-create,
@@ -29,9 +30,9 @@
 .header-container-title {
   width: auto;
   height: 9vh;
-  padding-left: 5vh;
   color: white;
   font-size: 1.5em;
+  margin-left: 5vw;
 }
 .header-container-myaccount {
   display: none;
@@ -47,37 +48,28 @@
   margin-right: 5vw;
   margin-top: 0.4vh;
   font-size: 2em;
+  cursor: pointer;
+}
+
+.burger-menu:hover {
+  width: 5vw;
+  height: 8vh;
+  line-height: 8vh;
+  transform: rotate(90deg) !important;
+  display: inline-block;
+  margin-right: 5vw;
+  margin-top: 0.4vh;
+  font-size: 2em;
+  cursor: pointer;
 }
 
 .menu-logout {
   display: none;
 }
 
-.burger-menu:hover {
-  color: white;
-  width: 5vw;
-  height: 2vh;
-  line-height: 2vh;
-  transform: rotate(90deg) !important;
-  display: inline-block;
-  margin-right: 5vw;
-  margin-top: 0.4vh;
-  cursor: pointer;
-}
-
-.burger-menu {
-  margin-right: 5vw;
-  margin-top: 2;
-  cursor: pointer;
-}
-
 .header-container-create,
 .header-container-login {
   display: none;
-}
-
-.burger-menu {
-  transform: rotate(90deg);
 }
 
 .header-submenu > a {
@@ -92,6 +84,7 @@
     display: none;
   }
   .header-container {
+    box-shadow: 5px 5px 5px grey;
     color: #d9e5ef !important;
     background-color: #122229;
     display: flex;
@@ -105,6 +98,10 @@
   .burger-menu {
     display: none;
   }
+  .header-container-login {
+    margin-right: 5vw;
+  }
+
   .header-container-title,
   .header-container-create,
   .header-container-login,
@@ -136,7 +133,7 @@
     justify-content: space-evenly;
   }
   .header-container-title:hover {
-    background-color: green;
+    background-color: #85b7d9;
     width: 25%;
     color: white !important;
     border-radius: 1em;

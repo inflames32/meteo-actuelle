@@ -2,7 +2,7 @@
   width: 100vw;
   min-height: 100vh;
   max-height: auto;
-  background-color: #267edb;
+  background-color: white;
   text-align: center;
   justify-content: center;
   &-contact {
@@ -19,6 +19,9 @@
   margin: auto;
   display: flex;
   flex-direction: column;
+}
+.createaccount-form-required-text {
+  font-size: 1.4em;
 }
 
 .createaccount-form-email,
@@ -50,11 +53,14 @@
 
 @media screen and (max-width: 746px) {
   .createaccount-body {
-    height: 87vh;
+    height: 81vh;
   }
   .createaccount-container {
     min-height: 100vh;
     max-height: auto;
+  }
+  .createaccount-form-required-text {
+    font-size: 1.4em;
   }
 }
 
@@ -64,7 +70,7 @@
     max-height: 100vh;
   }
   .createaccount-body {
-    height: 94vh;
+    height: 88vh;
   }
 }
 

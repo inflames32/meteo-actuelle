@@ -40,7 +40,7 @@ const CreateAccount = ({
             action="submit"
             onSubmit={handleSubmit}
           >
-            <div>Les champs marqués d'un <span className="required">*</span> sont obligatoires</div>
+            <div className="createaccount-form-required-text">Les champs marqués d'un <span className="required">*</span> sont obligatoires</div>
             <div>
               <Input
                 className="createaccount-form-email"
