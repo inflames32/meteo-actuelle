@@ -61,11 +61,10 @@ const Header = ({
             className="header-container-title"
           >Météo Actuelle
           </Link>
-          <Link to={url}>
-            <span
-              className="header-container-myaccount"
-            >{loginData.email}
-            </span>
+          <Link
+            to={url}
+            className="header-container-myaccount"
+          >{loginData.email}
           </Link>
           <Link
             to="/"

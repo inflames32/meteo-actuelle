@@ -5,7 +5,9 @@ import { selectUnit, addFollowed, removeFollowed } from '../../../store/actions'
 
 import '../../../styles/ApiSuccess.scss';
 
-const ApiSuccess = ({ API, units, selectUnit, followed, addFollowed, removeFollowed }) => {
+const ApiSuccess = ({
+  API, units, selectUnit, followed, addFollowed, removeFollowed,
+}) => {
   const temp = API.main.temp.toFixed(1);
   const tempFeel = API.main.feels_like.toFixed(1);
   const windInKmByHour = Math.trunc(API.wind.speed * 3.6);
@@ -14,11 +16,14 @@ const ApiSuccess = ({ API, units, selectUnit, followed, addFollowed, removeFollo
   return (
     <div className="apiSuccess-container">
       <div className="apiSuccess-container-button">
-        <div className="container-city_name">{API.name} ({API.sys.country})
+        <div className="container-city_name">{API.name} {API.sys.country}
         </div>
       </div>
-      <img src={weatherIcon} alt="icon_weather" />
-      <div className="container-temp">Température: {temp} °C</div>
+      <div className="container-temp">
+        <div className="container-temp-icon"><img src={weatherIcon} alt="icon_weather" /></div>
+        <div className="container-temp-symbol">|</div>
+        <div className="container-temp-temp">{temp} °C</div>
+      </div>
       <div className="container-temp_feel">Température ressentie: {tempFeel} °C</div>
       <div className="container-city_cloud">Couverture nuageuse: {API.weather.[0].description}, {API.clouds.all} %</div>
       <div className="container-city_humidity">Humidité: {API.main.humidity} %</div>
