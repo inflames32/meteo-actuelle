@@ -5,3 +5,5 @@ Thumbs.db
 yarn-error.log
 .env
 .netlify
+.env.development
+.env.production

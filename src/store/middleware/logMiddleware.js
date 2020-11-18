@@ -15,8 +15,7 @@ const logMiddleware = (store) => (next) => (action) => {
   next(action);
   switch (action.type) {
     case SUBMITCREATEACCOUNTFORM: {
-      const url = process.env.REACT_APP_URL_PROD;
-      //const url = process.env.REACT_APP_URL_DEV;
+      const url = process.env.REACT_APP_URL;
       axios({
         method: 'post',
         url: `${url}/signup`,
@@ -33,8 +32,8 @@ const logMiddleware = (store) => (next) => (action) => {
     }
 
     case ON_FORM_LOGIN: {
-      const url = process.env.REACT_APP_URL_PROD;
-      // const url = process.env.REACT_APP_URL_DEV;
+      const url = process.env.REACT_APP_URL;
+
       const data = store.getState().user.loginData;
       axios({
         method: 'post',

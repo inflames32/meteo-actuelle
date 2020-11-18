@@ -4,6 +4,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
+
+
 module.exports = {
   entry: [
     // SCSS
@@ -19,7 +21,9 @@ module.exports = {
     },
   },
   plugins: [
-    new Dotenv(),
+    // new Dotenv({
+    //   path: './.env.'
+    // }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
@@ -31,7 +35,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      favicon: paths.assets + '/favicon.ico',
+      favicon: paths.assets + '/favicon/favicon.ico',
       template: paths.assets + '/index.html',
       filename: './index.html',
     }),

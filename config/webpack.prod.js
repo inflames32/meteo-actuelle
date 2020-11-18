@@ -6,6 +6,8 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
+
 module.exports = merge(common, {
   mode: 'production',
   devtool: false,
@@ -18,6 +20,9 @@ module.exports = merge(common, {
     new UglifyJsPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
+    }),
+    new Dotenv({
+      path: './config/.env.production'
     }),
     // Stats bundle
     new BundleStatsWebpackPlugin(),

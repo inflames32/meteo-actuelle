@@ -1,7 +1,7 @@
 {
   "name": "react-modele",
   "scripts": {
-    "start": "cross-env REACT_APP_API_URL_DEV= NODE_ENV=development webpack-dev-server --config config/webpack.dev.js",
+    "start": "cross-env  webpack-dev-server --config config/webpack.dev.js",
     "build": "cross-env REACT_APP_URL_PROD= NODE_ENV=production webpack --config config/webpack.prod.js",
     "dev": "webpack --env.API_URL=http://localhost:8000 --config webpack.config.dev.js",
     "lint": "eslint src/**/*.js",
