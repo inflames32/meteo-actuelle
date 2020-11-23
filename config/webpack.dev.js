@@ -10,7 +10,7 @@ module.exports = merge(common, {
   mode: 'development',
   plugins: [
     new Dotenv({
-      path: './config/.env.development'
+      path: './config/.env.dev'
     }),
   ],
   devtool: 'inline-source-map',

@@ -22,7 +22,7 @@ module.exports = merge(common, {
       filename: 'css/[name].css',
     }),
     new Dotenv({
-      path: './config/.env.production'
+      path: './config/.env.prod'
     }),
     // Stats bundle
     new BundleStatsWebpackPlugin(),

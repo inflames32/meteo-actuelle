@@ -123,13 +123,9 @@ const Header = ({
                   <a href="https://www.linkedin.com/in/pierre-cahuzac-60b8491a4/">
                     <GrLinkedin />
                   </a>
-                </div>
-                <div className="icon">
                   <a href="https://github.com/inflames32">
                     <GrGithub />
                   </a>
-                </div>
-                <div className="icon">
                   <a href="https://www.twitch.tv/badtupeupastest">
                     <FaTwitch />
                   </a>
@@ -174,13 +170,9 @@ const Header = ({
                   <a href="https://www.linkedin.com/in/pierre-cahuzac-60b8491a4/">
                     <GrLinkedin />
                   </a>
-                </div>
-                <div className="icon">
                   <a href="https://github.com/inflames32">
                     <GrGithub />
                   </a>
-                </div>
-                <div className="icon">
                   <a href="https://www.twitch.tv/badtupeupastest">
                     <FaTwitch />
                   </a>
