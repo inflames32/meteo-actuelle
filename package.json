@@ -3,7 +3,7 @@
   "scripts": {
     "start": "cross-env  webpack-dev-server --config config/webpack.dev.js",
     "build": "cross-env REACT_APP_URL_PROD= NODE_ENV=production webpack --config config/webpack.prod.js",
-    "dev": "webpack --env.API_URL=http://localhost:8000 --config webpack.config.dev.js",
+    "dev": "webpack --env.API_URL=http://localhost:8000 --config config/webpack.dev.js",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint --fix src/**/*.js",
     "clean": "rm -rf dist",
@@ -71,6 +71,7 @@
     "react-icons": "^3.11.0",
     "react-redux": "*",
     "react-router-dom": "^5.2.0",
+    "react-select": "^3.1.1",
     "react-toastify": "^6.0.9",
     "redux": "*",
     "semantic-ui-css": "^2.4.1",

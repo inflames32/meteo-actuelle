@@ -19,6 +19,7 @@ import {
   LOGOUT,
   LOGOUT_SUCCESS,
   LOGOUT_ERROR,
+  CHOOSE_COUNTRY,
 } from '../actions';
 
 const initialState = {
@@ -33,7 +34,8 @@ const initialState = {
   loadingLoginSubmit: false,
   loading: false,
   city: '',
-  cityZipCode: '',
+  zipCode: '',
+  // countryCode: "fr",
   units: 'metric',
   API: {},
   messageSuccess: '',
@@ -47,10 +49,16 @@ const initialState = {
     id: '',
   },
   weatherAPI: '',
+  choose: '',
 };
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
+    case CHOOSE_COUNTRY:
+      return {
+        ...state,
+        choose: action.payload,
+      };
     case OPEN_MENU:
       return {
         ...state,
@@ -159,7 +167,7 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         loading: false,
-        messageError: 'unknow city',
+        messageError: 'ville inconnue ou zone de recherche vide',
         apiSuccess: false,
         API: {},
       };

@@ -30,6 +30,20 @@ export const SUBMITCREATEACCOUNTFORMERROR = 'SUBMITCREATEACCOUNTFORMERROR';
 export const OPEN_MENU = 'OPEN_MENU';
 export const CLOSE_MENU = 'CLOSE_MENU';
 
+// = choix du pays
+export const CHOOSE_COUNTRY = 'CHOOSE_COUNTRY';
+export const SUBMIT_CITY_IN_FRANCE = 'SUBMIT_CITY_IN_FRANCE';
+
+export const submitCityInFrance = (payload) => ({
+  type: SUBMIT_CITY_IN_FRANCE,
+  payload,
+});
+
+export const chooseCountry = (payload) => ({
+  type: CHOOSE_COUNTRY,
+  payload,
+});
+
 export const openMenu = () => ({
   type: OPEN_MENU,
 });
@@ -49,8 +63,6 @@ export const logoutError = () => ({
 });
 
 // = openBurgerMenu
-
-
 export const onCreateAccountInputChange = (payload) => ({
   type: ONCREATEACCOUNTINPUTCHANGE,
   payload,
@@ -78,7 +90,7 @@ export const addFollowed = (payload) => ({
 export const removeFollowed = (payload) => ({
   type: REMOVEFOLLOWED,
   payload,
-})
+});
 
 export const selectUnit = (payload) => ({
   type: SELECT_UNIT,
