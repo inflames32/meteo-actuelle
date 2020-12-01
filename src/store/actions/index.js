@@ -1,7 +1,6 @@
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 export const INPUT_CITY_CHANGE = 'INPUT_CITY_CHANGE';
-export const SUBMIT = 'SUBMIT';
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const LOGOUT = 'LOGOUT';
 export const LOGOUT_ERROR = 'LOGOUT_ERROR';
@@ -32,16 +31,22 @@ export const CLOSE_MENU = 'CLOSE_MENU';
 
 // = choix du pays
 export const CHOOSE_COUNTRY = 'CHOOSE_COUNTRY';
+// = Submit en France
 export const SUBMIT_CITY_IN_FRANCE = 'SUBMIT_CITY_IN_FRANCE';
-
-export const submitCityInFrance = (payload) => ({
-  type: SUBMIT_CITY_IN_FRANCE,
-  payload,
-});
+// =Submit dans le monde
+export const SUBMIT = 'SUBMIT';
 
 export const chooseCountry = (payload) => ({
   type: CHOOSE_COUNTRY,
   payload,
+});
+
+export const submitCityInFrance = () => ({
+  type: SUBMIT_CITY_IN_FRANCE,
+});
+
+export const submit = () => ({
+  type: SUBMIT,
 });
 
 export const openMenu = () => ({
@@ -100,10 +105,6 @@ export const selectUnit = (payload) => ({
 export const inputCityChange = (payload) => ({
   type: INPUT_CITY_CHANGE,
   payload,
-});
-
-export const submit = () => ({
-  type: SUBMIT,
 });
 
 export const onInputChange = (payload) => ({

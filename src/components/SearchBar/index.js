@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Select from 'react-select';
 import propTypes from 'prop-types';
 import { Input, Button } from 'semantic-ui-react';
 
 import {
   inputCityChange, submit, chooseCountry, submitCityInFrance,
 } from '../../store/actions';
-import '../../styles/search-bar.scss';
+import '../../styles/searchbar.scss';
 
 const SearchBar = ({
   loading,
@@ -18,23 +17,22 @@ const SearchBar = ({
   messageSuccess,
   selectZone,
   choose,
+  submitCityInFrance,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     if (choose === 'fr') {
-      console.log("j'ai choisi france");
       submitCityInFrance();
+      console.log(submitCityInFrance);
     }
     else {
-      console.log("j'ai choisi monde");
       submitCitySearch();
+      console.log(submitCitySearch);
     }
   };
   const handleCountry = (evt) => {
-    const { name, value } = evt.target;
-    selectZone({
-      [name]: value,
-    });
+    const worldZone = evt.target.value;
+    selectZone(worldZone);
     console.log(`j'ai choisi ---${evt.target.value}---`);
   };
   return (
@@ -51,12 +49,13 @@ const SearchBar = ({
           <div>message: {messageSuccess}</div>
         )}
         <select
-
+          className="select"
           name="country"
           value={choose}
           onChange={handleCountry}
         >
           <option
+            className="select-country"
             selected
           >---choisissez la zone---
           </option>
@@ -120,6 +119,7 @@ SearchBar.propTypes = {
   messageSuccess: propTypes.string.isRequired,
   selectZone: propTypes.func.isRequired,
   choose: propTypes.string.isRequired,
+  submitCityInFrance: propTypes.func.isRequired,
 
 };
 

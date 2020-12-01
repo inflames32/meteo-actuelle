@@ -57,7 +57,14 @@
   margin-top: 1em;
 }
 
+.today {
+  color: black;
+}
+
 @media screen and (max-width: 650px) {
+  .today {
+    color: black;
+  }
   .apiSuccess-container {
     width: 80vw;
   }
@@ -81,9 +88,6 @@
       height: 5em;
       line-height: 5em;
     }
-    // &-icon > img {
-    //   margin-top: 0.8em;
-    // }
     &-symbol {
       width: 5%;
       margin: auto;

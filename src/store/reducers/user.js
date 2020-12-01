@@ -20,6 +20,7 @@ import {
   LOGOUT_SUCCESS,
   LOGOUT_ERROR,
   CHOOSE_COUNTRY,
+  SUBMIT_CITY_IN_FRANCE,
 } from '../actions';
 
 const initialState = {
@@ -149,6 +150,12 @@ export default (state = initialState, action = {}) => {
       };
 
     case SUBMIT:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case SUBMIT_CITY_IN_FRANCE:
       return {
         ...state,
         loading: true,

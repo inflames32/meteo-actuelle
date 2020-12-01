@@ -2,7 +2,7 @@ import React from 'react';
 import toast from 'toastify';
 import { Link } from 'react-router-dom';
 import { GrLinkedin, GrGithub } from 'react-icons/gr';
-import { FaTwitch } from 'react-icons/fa'
+import { FaTwitch } from 'react-icons/fa';
 import { Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -120,15 +120,19 @@ const Header = ({
               </Link>
               <div className="burger-menu-container-login menu-item menu-social">
                 <div className="icon">
-                  <a href="https://www.linkedin.com/in/pierre-cahuzac-60b8491a4/">
-                    <GrLinkedin />
-                  </a>
-                  <a href="https://github.com/inflames32">
+                  <div className="icon-socialsnetworks">
+                    <a href="https://www.linkedin.com/in/pierre-cahuzac-60b8491a4/">
+                      <GrLinkedin />
+                    </a>
+                  </div>
+                  <div className="icon-socialsnetworks"> <a href="https://github.com/inflames32">
                     <GrGithub />
                   </a>
-                  <a href="https://www.twitch.tv/badtupeupastest">
+                  </div>
+                  <div className="icon-socialsnetworks"><a href="https://www.twitch.tv/badtupeupastest">
                     <FaTwitch />
                   </a>
+                  </div>
                 </div>
               </div>
             </nav>
