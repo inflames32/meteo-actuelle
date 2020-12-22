@@ -1,7 +1,8 @@
 .app {
   border-radius: 0.5em;
   padding-bottom: 2rem;
-  width: 100vw;
+  min-width: 393vw;
+  max-width: 100vw;
   min-height: 100vh;
   margin: 1em auto;
   text-align: center;

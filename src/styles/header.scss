@@ -78,6 +78,26 @@
   z-index: 5;
   background-color: #122229;
 }
+.icon {
+  display: flex;
+}
+.icon:hover {
+  display: flex;
+}
+.icon-socialsnetworks {
+  display: flex;
+  flex: row;
+  width: 30%;
+  justify-content: space-around;
+  margin: auto;
+}
+.icon-socialsnetworks:hover {
+  display: flex;
+  flex: row;
+  width: 30%;
+  justify-content: space-around;
+  margin: auto;
+}
 
 @media screen and (min-width: 746px) {
   .header-submenu {

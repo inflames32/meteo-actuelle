@@ -9,8 +9,12 @@
 
 .search-bar {
   height: 3em !important;
-  height: 3em !important;
   width: 60vw !important;
+}
+
+.select {
+  margin: auto;
+  height: 3em !important;
 }
 
 @media screen and (max-width: 650px) {
@@ -20,6 +24,13 @@
     margin: auto !important;
     border: black !important;
   }
+  .select {
+    margin: auto;
+    height: 3em !important;
+    width: 60vw !important;
+    margin-bottom: 1vh;
+  }
+
   .container-searchbar {
     width: 100% !important;
   }

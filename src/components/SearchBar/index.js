@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import { Input, Button } from 'semantic-ui-react';
 
-import { inputCityChange, submit } from '../../store/actions';
-
-import '../../styles/search-bar.scss';
+import {
+  inputCityChange, submit, chooseCountry, submitCityInFrance,
+} from '../../store/actions';
+import '../../styles/searchbar.scss';
 
 const SearchBar = ({
   loading,
@@ -14,12 +15,26 @@ const SearchBar = ({
   onInputChange,
   messageError,
   messageSuccess,
+  selectZone,
+  choose,
+  submitCityInFrance,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    submitCitySearch();
+    if (choose === 'fr') {
+      submitCityInFrance();
+      console.log(submitCityInFrance);
+    }
+    else {
+      submitCitySearch();
+      console.log(submitCitySearch);
+    }
   };
-
+  const handleCountry = (evt) => {
+    const worldZone = evt.target.value;
+    selectZone(worldZone);
+    console.log(`j'ai choisi ---${evt.target.value}---`);
+  };
   return (
     <div className="container-searchbar">
       <form
@@ -33,6 +48,31 @@ const SearchBar = ({
         {messageSuccess && (
           <div>message: {messageSuccess}</div>
         )}
+        <select
+          className="select"
+          name="country"
+          value={choose}
+          onChange={handleCountry}
+        >
+          <option
+            className="select-country"
+            selected
+          >---choisissez la zone---
+          </option>
+          <option
+            onChange={handleCountry}
+            name="france"
+            value="fr"
+            defaultChecked
+          >France
+          </option>
+          <option
+            onChange={handleCountry}
+            name="monde"
+            value="world"
+          >Monde
+          </option>
+        </select>
 
         <Input
           className="search-bar"
@@ -46,21 +86,25 @@ const SearchBar = ({
           focus
 
         />
-        {loading && (
-          <Button
-            type="submit"
-            className="container-button"
-            loading
-          />
-        )}
+        {
+          loading && (
+            <Button
+              type="submit"
+              className="container-button"
+              loading
+            />
+          )
+        }
 
-        {!loading && (
-          <Button
-            className="container-button"
-            type="submit"
-          >Rechercher la ville
-          </Button>
-        )}
+        {
+          !loading && (
+            <Button
+              className="container-button"
+              type="submit"
+            >Rechercher la ville
+            </Button>
+          )
+        }
       </form>
     </div>
   );
@@ -73,6 +117,10 @@ SearchBar.propTypes = {
   onInputChange: propTypes.func.isRequired,
   messageError: propTypes.string.isRequired,
   messageSuccess: propTypes.string.isRequired,
+  selectZone: propTypes.func.isRequired,
+  choose: propTypes.string.isRequired,
+  submitCityInFrance: propTypes.func.isRequired,
+
 };
 
 const mapState = (state) => ({
@@ -81,6 +129,7 @@ const mapState = (state) => ({
   units: state.user.units,
   data: state.user.data,
   loading: state.user.loading,
+  choose: state.user.choose,
 });
 
 const mapDispatch = (dispatch) => ({
@@ -89,6 +138,12 @@ const mapDispatch = (dispatch) => ({
   },
   submitCitySearch: () => {
     dispatch(submit());
+  },
+  submitCityInFrance: () => {
+    dispatch(submitCityInFrance());
+  },
+  selectZone: (selectZone) => {
+    dispatch(chooseCountry(selectZone));
   },
 });
 

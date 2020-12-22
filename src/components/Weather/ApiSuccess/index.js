@@ -12,11 +12,14 @@ const ApiSuccess = ({
   const tempFeel = API.main.feels_like.toFixed(1);
   const windInKmByHour = Math.trunc(API.wind.speed * 3.6);
   const weatherIcon = `http://openweathermap.org/img/wn/${API.weather.[0].icon}@2x.png`;
-
+  const flag = `https://www.countryflags.io/${API.sys.country}/flat/64.png`;
   return (
     <div className="apiSuccess-container">
       <div className="apiSuccess-container-button">
         <div className="container-city_name">{API.name} {API.sys.country}
+          <div>
+            <img src={flag} alt="country flag" />
+          </div>
         </div>
       </div>
       <div className="container-temp">

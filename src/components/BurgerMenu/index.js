@@ -7,24 +7,28 @@ import '../../styles/burger-menu.scss';
 const BurgerMenu = ({ closeMenu }) => (
     <div className="burger-menu-container">
         <nav className="burger-menu-navigation">
-            <div className="close-menu" onClick={
-                closeMenu()
-            }>X</div>
+            <div
+                className="close-menu"
+                onClick={
+                    closeMenu()
+                }
+            >X
+      </div>
             <Link
                 to="/signup"
                 className="burger-menu-containe-create menu-item"
             >Créer ton compte?
-    </Link>
+      </Link>
             <Link
                 to="/signin"
                 className="burger-menu-container-login menu-item"
             >Connexion
-    </Link>
+      </Link>
             <Link
                 to="/contact"
                 className="burger-menu-container-contact menu-item"
             >Contact
-    </Link>
+      </Link>
         </nav>
     </div>
 );

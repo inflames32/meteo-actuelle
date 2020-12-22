@@ -14,7 +14,7 @@ const Weather = ({ apiSuccess }) => {
 
     <div className="container-weather">
       <div className="container-title">
-        <span> {date} à {time}</span>
+        <span className="today"> {date} à {time}</span>
         {apiSuccess && (
           <ApiSuccess />
         )}
@@ -25,7 +25,6 @@ const Weather = ({ apiSuccess }) => {
 
 Weather.propTypes = {
   apiSuccess: PropTypes.bool.isRequired,
-  API: PropTypes.object.isRequired,
 };
 
 const mapState = (state) => ({
