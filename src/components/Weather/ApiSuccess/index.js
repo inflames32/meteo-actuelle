@@ -17,7 +17,9 @@ const ApiSuccess = ({
     <div className="apiSuccess-container">
       <div className="apiSuccess-container-button">
         <div className="container-city_name">{API.name} {API.sys.country}
-          <div><img src={flag} alt="country flag" /></div>
+          <div>
+            <img src={flag} alt="country flag" />
+          </div>
         </div>
       </div>
       <div className="container-temp">

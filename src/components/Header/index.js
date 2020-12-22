@@ -125,13 +125,15 @@ const Header = ({
                       <GrLinkedin />
                     </a>
                   </div>
-                  <div className="icon-socialsnetworks"> <a href="https://github.com/inflames32">
-                    <GrGithub />
-                  </a>
+                  <div className="icon-socialsnetworks">
+                    <a href="https://github.com/inflames32">
+                      <GrGithub />
+                    </a>
                   </div>
-                  <div className="icon-socialsnetworks"><a href="https://www.twitch.tv/badtupeupastest">
-                    <FaTwitch />
-                  </a>
+                  <div className="icon-socialsnetworks">
+                    <a href="https://www.twitch.tv/badtupeupastest">
+                      <FaTwitch />
+                    </a>
                   </div>
                 </div>
               </div>
