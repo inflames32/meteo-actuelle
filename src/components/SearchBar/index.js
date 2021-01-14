@@ -115,8 +115,6 @@ SearchBar.propTypes = {
   city: propTypes.string.isRequired,
   submitCitySearch: propTypes.func.isRequired,
   onInputChange: propTypes.func.isRequired,
-  messageError: propTypes.string.isRequired,
-  messageSuccess: propTypes.string.isRequired,
   selectZone: propTypes.func.isRequired,
   choose: propTypes.string.isRequired,
   submitCityInFrance: propTypes.func.isRequired,

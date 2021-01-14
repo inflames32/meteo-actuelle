@@ -3,8 +3,6 @@ dist/
 .DS_Store
 Thumbs.db
 yarn-error.log
-.env
 .netlify
-.env.development
-.env.production
-.netlify.bak
+config/.env.dev
+config/.env.prod

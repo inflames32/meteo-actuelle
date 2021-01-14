@@ -75,7 +75,7 @@
     "react-toastify": "^6.0.9",
     "redux": "*",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^1.2.1",
+    "semantic-ui-react": "^2.0.2",
     "styled-components": "*",
     "surge": "^0.21.6",
     "toastify": "^2.0.1",
