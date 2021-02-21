@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
-import { Input, Button } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 import {
   inputCityChange, submit, chooseCountry, submitCityInFrance,
@@ -74,7 +74,7 @@ const SearchBar = ({
           </option>
         </select>
 
-        <Input
+        <input
           className="search-bar"
           placeholder="Nom de la ville"
           type="text"
