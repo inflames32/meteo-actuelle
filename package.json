@@ -61,6 +61,7 @@
     "argv": "0.0.2",
     "axios": "^0.20.0",
     "bulma": "^0.9.0",
+    "core-js": "3",
     "env-cmd": "^10.1.0",
     "moment": "^2.28.0",
     "moment-timezone": "^0.5.31",

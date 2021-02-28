@@ -21,36 +21,53 @@ import {
   LOGOUT_ERROR,
   CHOOSE_COUNTRY,
   SUBMIT_CITY_IN_FRANCE,
-} from '../actions';
+  DELETE_CITY_ON_CLICK,
+} from "../actions";
 
 const initialState = {
+  citiesByDefault:
+    "paris", /* [
+    {
+      city: "Paris",
+      choose: "&,fr",
+    }, */,
+  /*    {
+      id: "2",
+      city: "Londres",
+      choose: "",
+    },
+    {
+      id: "3",
+      city: "Tokyo",
+      choose: "world",
+    }, */
   menuIsOpen: false,
   createAccount: {
-    email: '',
-    password: '',
-    passwordConfirm: '',
+    email: "",
+    password: "",
+    passwordConfirm: "",
   },
   followed: false,
   isLogged: false,
   loadingLoginSubmit: false,
   loading: false,
-  city: '',
-  zipCode: '',
+  city: "",
+  zipCode: "",
   // countryCode: "fr",
-  units: 'metric',
+  units: "metric",
   API: {},
-  messageSuccess: '',
-  messageError: '',
-  lang: 'fr',
+  messageSuccess: "",
+  messageError: "",
+  lang: "fr",
   apiSuccess: false,
-  message: '',
+  message: "",
   loginData: {
-    email: '',
-    password: '',
-    id: '',
+    email: "",
+    password: "",
+    id: "",
   },
-  weatherAPI: '',
-  choose: '',
+  weatherAPI: "",
+  choose: "",
 };
 
 export default (state = initialState, action = {}) => {
@@ -75,25 +92,25 @@ export default (state = initialState, action = {}) => {
     case LOGOUT:
       return {
         ...state,
-        message: 'déconnexion en cours...',
+        message: "déconnexion en cours...",
       };
 
     case LOGOUT_SUCCESS:
       return {
         ...state,
-        message: 'déconnexion réussie',
+        message: "déconnexion réussie",
         isLogged: false,
         loginData: {
-          email: '',
-          password: '',
-          id: '',
+          email: "",
+          password: "",
+          id: "",
         },
       };
 
     case LOGOUT_ERROR:
       return {
         ...state,
-        message: 'problème de déconnexion',
+        message: "problème de déconnexion",
         isLogged: true,
       };
 
@@ -116,14 +133,14 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         loading: false,
-        message: 'ton compte a été crée! ',
+        message: "ton compte a été crée! ",
       };
 
     case SUBMITCREATEACCOUNTFORMERROR:
       return {
         ...state,
         loading: false,
-        message: 'impossible de créer ton compte!',
+        message: "impossible de créer ton compte!",
       };
 
     case ADDFOLLOWED:
@@ -137,6 +154,13 @@ export default (state = initialState, action = {}) => {
         ...state,
         followed: !state.followed,
       };
+
+    case DELETE_CITY_ON_CLICK:
+      return {
+        ...state,
+        city: "",
+      };
+
     case SELECT_UNIT:
       return {
         ...state,
@@ -165,7 +189,7 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         loading: false,
-        messageSuccess: 'congratulations!',
+        messageSuccess: "congratulations!",
         API: { ...action.payload },
         apiSuccess: true,
       };
@@ -174,7 +198,7 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         loading: false,
-        messageError: 'ville inconnue ou zone de recherche vide',
+        messageError: "ville inconnue ou zone de recherche vide",
         apiSuccess: false,
         API: {},
       };
@@ -199,9 +223,9 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         loadingLoginSubmit: false,
-        userId: '',
+        userId: "",
         isLogged: false,
-        message: 'erreur de connexion à votre compte',
+        message: "erreur de connexion à votre compte",
       };
 
     case ON_FORM_LOGIN_SUCCESS:
@@ -213,7 +237,7 @@ export default (state = initialState, action = {}) => {
           ...state.loginData,
           id: action.payload,
         },
-        message: 'vous êtes connecté',
+        message: "vous êtes connecté",
       };
 
     default:

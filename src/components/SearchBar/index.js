@@ -1,12 +1,15 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import propTypes from 'prop-types';
-import { Button } from 'semantic-ui-react';
+import React from "react";
+import { connect } from "react-redux";
+//import propTypes from "prop-types";
+import { Button } from "semantic-ui-react";
 
 import {
-  inputCityChange, submit, chooseCountry, submitCityInFrance,
-} from '../../store/actions';
-import '../../styles/searchbar.scss';
+  inputCityChange,
+  submit,
+  chooseCountry,
+  submitCityInFrance,
+} from "../../store/actions";
+import "../../styles/searchbar.scss";
 
 const SearchBar = ({
   loading,
@@ -17,15 +20,13 @@ const SearchBar = ({
   messageSuccess,
   selectZone,
   choose,
-  submitCityInFrance,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    if (choose === 'fr') {
+    if (choose === "fr") {
       submitCityInFrance();
       // console.log(submitCityInFrance);
-    }
-    else {
+    } else {
       submitCitySearch();
       // console.log(submitCitySearch);
     }
@@ -37,40 +38,28 @@ const SearchBar = ({
   };
   return (
     <div className="container-searchbar">
-      <form
-        className="form-input"
-        action="GET"
-        onSubmit={handleSubmit}
-      >
-        {messageError && (
-          <div>message: {messageError}</div>
-        )}
-        {messageSuccess && (
-          <div>message: {messageSuccess}</div>
-        )}
+      <form className="form-input" action="GET" onSubmit={handleSubmit}>
+        {messageError && <div>message: {messageError}</div>}
+        {messageSuccess && <div>message: {messageSuccess}</div>}
         <select
           className="select"
           name="country"
           value={choose}
           onChange={handleCountry}
         >
-          <option
-            className="select-country"
-            selected
-          >---choisissez la zone---
+          <option className="select-country" value>
+            ---choisissez la zone---
           </option>
           <option
             onChange={handleCountry}
             name="france"
             value="fr"
             defaultChecked
-          >France
+          >
+            France
           </option>
-          <option
-            onChange={handleCountry}
-            name="monde"
-            value="world"
-          >Monde
+          <option onChange={handleCountry} name="monde" value="world">
+            Monde
           </option>
         </select>
 
@@ -83,44 +72,32 @@ const SearchBar = ({
             onInputChange(evt.target.value);
           }}
           icon="search"
-          focus
-
+          //focus
         />
-        {
-          loading && (
-            <Button
-              type="submit"
-              className="container-button"
-              loading
-            />
-          )
-        }
+        {loading && (
+          <Button type="submit" className="container-button" loading />
+        )}
 
-        {
-          !loading && (
-            <Button
-              className="container-button"
-              type="submit"
-            >Rechercher la ville
-            </Button>
-          )
-        }
+        {!loading && (
+          <Button className="container-button" type="submit">
+            Rechercher la ville
+          </Button>
+        )}
       </form>
     </div>
   );
 };
 
-SearchBar.propTypes = {
+/* SearchBar.propTypes = {
   loading: propTypes.bool.isRequired,
   city: propTypes.string.isRequired,
   submitCitySearch: propTypes.func.isRequired,
   onInputChange: propTypes.func.isRequired,
   selectZone: propTypes.func.isRequired,
   choose: propTypes.string.isRequired,
-  submitCityInFrance: propTypes.func.isRequired,
   messageError: propTypes.string.isRequired,
   messageSuccess: propTypes.string.isRequired,
-};
+}; */
 
 const mapState = (state) => ({
   city: state.user.city,
