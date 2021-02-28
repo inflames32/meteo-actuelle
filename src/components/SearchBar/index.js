@@ -23,17 +23,17 @@ const SearchBar = ({
     evt.preventDefault();
     if (choose === 'fr') {
       submitCityInFrance();
-      console.log(submitCityInFrance);
+      // console.log(submitCityInFrance);
     }
     else {
       submitCitySearch();
-      console.log(submitCitySearch);
+      // console.log(submitCitySearch);
     }
   };
   const handleCountry = (evt) => {
     const worldZone = evt.target.value;
     selectZone(worldZone);
-    console.log(`j'ai choisi ---${evt.target.value}---`);
+    // console.log(`j'ai choisi ---${evt.target.value}---`);
   };
   return (
     <div className="container-searchbar">
@@ -118,7 +118,8 @@ SearchBar.propTypes = {
   selectZone: propTypes.func.isRequired,
   choose: propTypes.string.isRequired,
   submitCityInFrance: propTypes.func.isRequired,
-
+  messageError: propTypes.string.isRequired,
+  messageSuccess: propTypes.string.isRequired,
 };
 
 const mapState = (state) => ({

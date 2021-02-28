@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { FiTrash2 } from 'react-icons/Fi';
 import { selectUnit, addFollowed, removeFollowed } from '../../../store/actions';
 
 import '../../../styles/ApiSuccess.scss';
@@ -32,10 +33,14 @@ const ApiSuccess = ({
       <div className="container-city_humidity">Humidité: {API.main.humidity} %</div>
       <div className="container-city_wind">Vent: {windInKmByHour} Km/h</div>
       <div className="container-city_visibility">Visibilité: {API.visibility} m</div>
-      {!followed
+      <div className="container-follow">
+        {!followed
         && (<div className="container-heart" onClick={addFollowed}><AiOutlineHeart /></div>)}
-      {followed
+        {followed
         && (<div className="container-heart" onClick={removeFollowed}><AiFillHeart /></div>)}
+        <div className="container-trash"><FiTrash2 /></div>
+      </div>
+
     </div>
   );
 };

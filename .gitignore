@@ -6,3 +6,5 @@ yarn-error.log
 .netlify
 config/.env.dev
 config/.env.prod
+/config/.env.dev
+/config/.env.prod

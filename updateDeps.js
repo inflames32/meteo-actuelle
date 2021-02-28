@@ -27,8 +27,8 @@ async function updateDeps() {
   }
 
   fs.writeFileSync('package.json', `${JSON.stringify(content, null, '  ')}\n`);
-  console.log('Done');
+  //console.log('Done');
 }
 
-console.log('Updating...');
+//console.log('Updating...');
 updateDeps();

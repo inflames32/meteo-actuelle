@@ -22,10 +22,10 @@ const logMiddleware = (store) => (next) => (action) => {
         data: store.getState().user.createAccount,
         withCredentials: true,
       }).then((res) => {
-        console.log(res.data, 'compte crée avec succès');
+        //console.log(res.data, 'compte crée avec succès');
         store.dispatch(submitCreateAccountFormSuccess(res.data));
       }).catch((error) => {
-        console.log(error, 'une erreur c\'est produite');
+        //console.log(error, 'une erreur c\'est produite');
         store.dispatch(submitCreateAccountFormError(error));
       });
       break;
@@ -60,7 +60,7 @@ const logMiddleware = (store) => (next) => (action) => {
         method: 'post',
         url: `${url}/logout`,
       }).then((res) => {
-        console.log(res.data);
+        //console.log(res.data);
         store.dispatch(logoutSuccess());
       })
         .catch((err) => {

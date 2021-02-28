@@ -17,7 +17,7 @@ const CreateAccount = ({
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log('je clic pour créer le compte');
+    // console.log('je clic pour créer le compte');
     submitCreateAccountForm();
   };
 
@@ -78,7 +78,6 @@ const CreateAccount = ({
               <span className="required"> *</span>
             </div>
 
-
             <div className="createAccount-form-button">
               {!disabled && (
                 <Button type="submit">Je crée mon compte</Button>
@@ -107,7 +106,7 @@ const mapDispatch = (dispatch) => ({
   },
 
   submitCreateAccountForm: () => {
-    console.log('je submit le formulaire de création');
+    // console.log('je submit le formulaire de création');
     dispatch(submitCreateAccountForm());
   },
 });
