@@ -22,25 +22,21 @@ import {
   CHOOSE_COUNTRY,
   SUBMIT_CITY_IN_FRANCE,
   DELETE_CITY_ON_CLICK,
+  API_USE_EFFECT_SUCCESS,
+  API_USE_EFFECT_ERROR,
 } from "../actions";
 
 const initialState = {
-  citiesByDefault:
-    "paris", /* [
-    {
-      city: "Paris",
-      choose: "&,fr",
-    }, */,
+  citiesByDefault: "Helsinki" /* {
+    city: "Paris",
+    choose: "&,fr",
+  }, */,
   /*    {
       id: "2",
       city: "Londres",
       choose: "",
     },
-    {
-      id: "3",
-      city: "Tokyo",
-      choose: "world",
-    }, */
+     */
   menuIsOpen: false,
   createAccount: {
     email: "",
@@ -68,10 +64,21 @@ const initialState = {
   },
   weatherAPI: "",
   choose: "",
+  APISuccessUseEffect: {},
+  APISuccessUseEffectLoading: true,
 };
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
+    case API_USE_EFFECT_SUCCESS:
+      return {
+        ...state,
+        APISuccessUseEffect: {
+          ...state.APISuccessUseEffect,
+          ...action.payload,
+        },
+        APISuccessUseEffectLoading: false,
+      };
     case CHOOSE_COUNTRY:
       return {
         ...state,
@@ -158,7 +165,7 @@ export default (state = initialState, action = {}) => {
     case DELETE_CITY_ON_CLICK:
       return {
         ...state,
-        city: "",
+        API: {},
       };
 
     case SELECT_UNIT:

@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import { Provider } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import axios from "axios";
+import { APIUseEffect } from "../../store/actions";
 
 // == Import components
 import Homepage from "../Homepage";
@@ -11,34 +13,16 @@ import Login from "../Login";
 import Error404 from "../error404";
 import User from "../User";
 import store from "../../store";
+// import Weather from
 
 // import "semantic-ui-css/semantic.min.css";
 import "../../styles/App.scss";
 
 // == Composant
-const App = () => {
-  const API_KEY = process.env.REACT_APP_API_KEY;
-  const city = store.getState().user.citiesByDefault;
-  const country = store.getState().user.citiesByDefault.choose;
-  const { units } = store.getState().user;
-  const { lang } = store.getState().user;
-
-  const takeCitiesByDefaultInReducer = async (url, method) => {
-    try {
-      const res = await axios({
-        method: "get",
-        url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&,fr&${units}=${units}&appid=${API_KEY}&lang=${lang}`,
-      });
-      console.log(res.data, "reponse ici");
-      // method(res.data);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
+const App = ({ APIUseEffect, APISuccessUseEffect }) => {
   useEffect(() => {
     console.log("useEffect");
-    takeCitiesByDefaultInReducer();
+    APIUseEffect();
   }, []);
 
   return (
@@ -55,7 +39,15 @@ const App = () => {
   );
 };
 
-// == Export
-export default App;
+const mapState = (state) => ({
+  APISuccessUseEffect: state.user.APISuccessUseEffect,
+});
 
-// <a href='https://pngtree.com/so/weather-forecast'>weather-forecast png from pngtree.com</a>
+const mapDispatch = (dispatch) => ({
+  APIUseEffect: () => {
+    dispatch(APIUseEffect());
+  },
+});
+
+// == Export
+export default connect(mapState, mapDispatch)(App);

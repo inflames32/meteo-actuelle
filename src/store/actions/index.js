@@ -37,6 +37,25 @@ export const SUBMIT_CITY_IN_FRANCE = "SUBMIT_CITY_IN_FRANCE";
 // =Submit dans le monde
 export const SUBMIT = "SUBMIT";
 
+// = API USE EFFECT
+export const API_USE_EFFECT = "API_USE_EFFECT";
+export const API_USE_EFFECT_SUCCESS = "API_USE_EFFECT_SUCCESS";
+export const API_USE_EFFECT_ERROR = "API_USE_EFFECT_ERROR";
+
+export const APIUseEffect = () => ({
+  type: API_USE_EFFECT,
+});
+
+export const APIUseEffectSuccess = (payload) => ({
+  type: API_USE_EFFECT_SUCCESS,
+  payload,
+});
+
+export const APIUseEffectError = (payload) => ({
+  type: API_USE_EFFECT_ERROR,
+  payload,
+});
+
 export const chooseCountry = (payload) => ({
   type: CHOOSE_COUNTRY,
   payload,

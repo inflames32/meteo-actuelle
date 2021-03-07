@@ -60,6 +60,7 @@
   "dependencies": {
     "argv": "0.0.2",
     "axios": "^0.20.0",
+    "bootstrap": "^4.6.0",
     "bulma": "^0.9.0",
     "core-js": "3",
     "env-cmd": "^10.1.0",
@@ -68,6 +69,7 @@
     "netlify-cli": "^2.69.6",
     "prop-types": "^15.7.2",
     "react": "*",
+    "react-bootstrap": "^1.5.1",
     "react-dom": "*",
     "react-icons": "^3.11.0",
     "react-redux": "*",
