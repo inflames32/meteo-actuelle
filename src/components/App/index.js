@@ -17,6 +17,7 @@ import store from "../../store";
 
 // import "semantic-ui-css/semantic.min.css";
 import "../../styles/App.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // == Composant
 const App = ({ APIUseEffect, APISuccessUseEffect }) => {
