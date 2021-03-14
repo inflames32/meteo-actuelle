@@ -7,7 +7,7 @@ import {
   inputCityChange,
   submit,
   chooseCountry,
-  submitCityInFrance,
+  submitInFrance,
 } from "../../store/actions";
 import "../../styles/searchbar.scss";
 
@@ -20,15 +20,16 @@ const SearchBar = ({
   messageSuccess,
   selectZone,
   choose,
+  searchInFrance,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     if (choose === "fr") {
-      submitCityInFrance();
-      // console.log(submitCityInFrance);
+      searchInFrance();
+      console.log(searchInFrance);
     } else {
       submitCitySearch();
-      // console.log(submitCitySearch);
+      console.log(submitCitySearch);
     }
   };
   const handleCountry = (evt) => {
@@ -115,8 +116,8 @@ const mapDispatch = (dispatch) => ({
   submitCitySearch: () => {
     dispatch(submit());
   },
-  submitCityInFrance: () => {
-    dispatch(submitCityInFrance());
+  searchInFrance: () => {
+    dispatch(submitInFrance());
   },
   selectZone: (selectZone) => {
     dispatch(chooseCountry(selectZone));

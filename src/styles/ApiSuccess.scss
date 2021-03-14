@@ -44,26 +44,26 @@
     line-height: 5em;
   }
 }
-.container-follow{
+.container-follow {
   display: flex;
   justify-content: space-around;
   margin-top: 2em;
 }
-.container-trash, .container-heart{
+.container-trash,
+.container-heart {
   width: 1.5em;
   height: 1.5em;
 }
-.container-heart>svg{
+.container-heart > svg {
   width: 1.5em;
   height: 1.5em;
-  margin: auto;  
+  margin: auto;
 }
-.container-trash>svg{
+.container-trash > svg {
   width: 1.5em;
   height: 1.5em;
-  margin: auto;  
+  margin: auto;
 }
-
 
 .today {
   color: black;

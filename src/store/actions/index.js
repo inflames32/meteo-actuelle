@@ -33,7 +33,7 @@ export const CLOSE_MENU = "CLOSE_MENU";
 // = choix du pays
 export const CHOOSE_COUNTRY = "CHOOSE_COUNTRY";
 // = Submit en France
-export const SUBMIT_CITY_IN_FRANCE = "SUBMIT_CITY_IN_FRANCE";
+export const SUBMIT_IN_FRANCE = "SUBMIT_IN_FRANCE";
 // =Submit dans le monde
 export const SUBMIT = "SUBMIT";
 
@@ -61,8 +61,8 @@ export const chooseCountry = (payload) => ({
   payload,
 });
 
-export const submitCityInFrance = () => ({
-  type: SUBMIT_CITY_IN_FRANCE,
+export const submitInFrance = () => ({
+  type: SUBMIT_IN_FRANCE,
 });
 
 export const submit = () => ({

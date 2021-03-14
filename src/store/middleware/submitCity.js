@@ -2,9 +2,9 @@ import axios from "axios";
 
 import {
   SUBMIT,
+  SUBMIT_IN_FRANCE,
   submitError,
   submitSuccess,
-  SUBMIT_CITY_IN_FRANCE,
 } from "../actions";
 
 const submitCity = (store) => (next) => (action) => {
@@ -32,15 +32,15 @@ const submitCity = (store) => (next) => (action) => {
       break;
     }
     // submit in France
-    case SUBMIT_CITY_IN_FRANCE: {
-      // console.log('je submit en france');
+    case SUBMIT_IN_FRANCE: {
+      console.log("je submit en france");
       axios({
         method: "get",
         url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName},fr&units=${unity}&appid=${API_KEY}&lang=${language}`,
       })
         .then((res) => {
-          // console.log('---resultat---', res, res.data);
-          // console.log(res.config.url);
+          console.log("---resultat---", res, res.data);
+          console.log(res.config.url);
           store.dispatch(submitSuccess(res.data));
         })
         .catch((err) => {

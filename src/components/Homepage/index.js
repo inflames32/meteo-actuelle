@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { toast, ToastContainer } from "react-toastify";
 import { Spinner } from "react-bootstrap";
 import Header from "../Header";
 import SearchBar from "../SearchBar";
@@ -16,15 +15,19 @@ const Homepage = ({ APISuccessUseEffect, APISuccessUseEffectLoading }) => (
     <div className="homepage-body">
       {APISuccessUseEffectLoading && (
         <div className="spinner">
-          <Spinner animation="border" />
+          <Spinner animation="grow" />
         </div>
       )}
-      {!APISuccessUseEffectLoading && <ApiUseEffect />}
+      {!APISuccessUseEffectLoading && (
+        <div className="useeffect">
+          <span className="exemple">Exemple de météo possible:</span>
+          <ApiUseEffect />
+        </div>
+      )}
       <SearchBar />
       <Weather />
     </div>
     <Footer />
-    <ToastContainer />
   </div>
 );
 const mapState = (state) => ({

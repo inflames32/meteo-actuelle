@@ -20,7 +20,7 @@ import {
   LOGOUT_SUCCESS,
   LOGOUT_ERROR,
   CHOOSE_COUNTRY,
-  SUBMIT_CITY_IN_FRANCE,
+  SUBMIT_IN_FRANCE,
   DELETE_CITY_ON_CLICK,
   API_USE_EFFECT_SUCCESS,
   API_USE_EFFECT_ERROR,
@@ -186,7 +186,7 @@ export default (state = initialState, action = {}) => {
         loading: true,
       };
 
-    case SUBMIT_CITY_IN_FRANCE:
+    case SUBMIT_IN_FRANCE:
       return {
         ...state,
         loading: true,

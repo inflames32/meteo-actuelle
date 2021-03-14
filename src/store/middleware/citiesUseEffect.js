@@ -21,7 +21,7 @@ const APIUseEffect = (store) => (next) => (action) => {
     case API_USE_EFFECT: {
       axios({
         method: "get",
-        url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&,fr&${units}=${units}&appid=${API_KEY}&lang=${lang}`,
+        url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}&lang=${lang}`,
       })
         .then((res) => {
           console.log(res.data, "reponse ici");

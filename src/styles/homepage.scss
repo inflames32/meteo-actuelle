@@ -20,25 +20,36 @@
   border: solid 3px red;
 }
 
+.useeffect {
+  margin-top: 2em;
+}
+
+.exemple {
+  margin-top: 0.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
 @media screen and (max-width: 746px) {
   .homepage-container {
     min-height: 100vh;
-    // max-height: auto;
+    max-height: auto;
   }
   .homepage-body {
-    height: 82vh;
-    //  max-height: auto;
+    min-height: 82vh;
+    max-height: auto;
   }
 }
 
 @media screen and (max-width: 650px) {
   .homepage-container {
     min-height: 100vh;
-    // max-height: auto !important;
+    max-height: auto !important;
   }
   .homepage-body {
     min-height: 82vh;
-    // max-height: auto !important;
+    max-height: auto !important;
   }
 }
 
@@ -64,5 +75,6 @@
   }
   .homepage-body {
     min-height: 100vh;
+    max-height: auto !important;
   }
 }
