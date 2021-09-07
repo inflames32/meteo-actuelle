@@ -1,2 +1,2 @@
 # whatweathertoday
-weather application in React
+weather application in React-redux
